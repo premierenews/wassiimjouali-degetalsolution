@@ -1,0 +1,122 @@
+{
+  "services": [
+    {
+      "title": "Web Development",
+      "category": "Websites",
+      "description": "Modern, conversion-focused websites built to elevate brand trust and business growth.",
+      "icon": "💻",
+      "highlights": ["Custom builds", "Performance optimization", "Scalable architecture"]
+    },
+    {
+      "title": "E-commerce",
+      "category": "E-commerce",
+      "description": "Online stores designed to improve product discovery, conversions, and customer loyalty.",
+      "icon": "🛒",
+      "highlights": ["UX-first checkout", "Catalog structuring", "Conversion optimization"]
+    },
+    {
+      "title": "Digital Marketing",
+      "category": "Marketing",
+      "description": "Campaigns that connect your brand with the right audience across channels and funnels.",
+      "icon": "📈",
+      "highlights": ["Growth strategy", "Campaign planning", "Performance reporting"]
+    },
+    {
+      "title": "Media Buying",
+      "category": "Marketing",
+      "description": "Media planning and paid acquisition to get the best return on every advertising dollar.",
+      "icon": "🎯",
+      "highlights": ["Paid social", "Audience targeting", "Budget planning"]
+    },
+    {
+      "title": "SEO",
+      "category": "Websites",
+      "description": "Search visibility strategies that improve organic traffic, rankings, and long-term growth.",
+      "icon": "🔍",
+      "highlights": ["Technical SEO", "Content strategy", "Local search"]
+    },
+    {
+      "title": "UI/UX",
+      "category": "Websites",
+      "description": "Clean and engaging product journeys designed for clarity, usability, and retention.",
+      "icon": "✨",
+      "highlights": ["Wireframes", "Design systems", "Usability testing"]
+    }
+  ],
+  "projects": [
+    {
+      "name": "Astra Finance",
+      "category": "Websites",
+      "type": "Website",
+      "description": "Premium corporate website for a modern financial advisory firm.",
+      "tech": ["React", "SEO", "Branding"],
+      "image": "https://images.unsplash.com/photo-1559526324-4b87b5e36e44?auto=format&fit=crop&w=900&q=80"
+    },
+    {
+      "name": "Luma Cart",
+      "category": "E-commerce",
+      "type": "E-commerce",
+      "description": "High-converting e-commerce storefront for beauty and wellness products.",
+      "tech": ["Shopify", "UX", "Analytics"],
+      "image": "https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=900&q=80"
+    },
+    {
+      "name": "Nexa Reach",
+      "category": "Marketing",
+      "type": "Marketing",
+      "description": "Digital growth campaign for a SaaS startup focused on lead generation.",
+      "tech": ["Ads", "Funnel", "CRM"],
+      "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=900&q=80"
+    },
+    {
+      "name": "Northstar Studio",
+      "category": "Websites",
+      "type": "Website",
+      "description": "Creative agency website with premium storytelling and lead capture flows.",
+      "tech": ["Strategy", "Brand", "Landing page"],
+      "image": "https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=900&q=80"
+    },
+    {
+      "name": "Harbor Market",
+      "category": "E-commerce",
+      "type": "E-commerce",
+      "description": "Marketplace landing experience built for product discovery and mobile purchases.",
+      "tech": ["Mobile UX", "Catalog", "Checkout"],
+      "image": "https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=900&q=80"
+    },
+    {
+      "name": "SignalBoost",
+      "category": "Marketing",
+      "type": "Marketing",
+      "description": "Performance marketing system delivering qualified leads for a B2B brand.",
+      "tech": ["Media buying", "Optimization", "A/B testing"],
+      "image": "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=900&q=80"
+    }
+  ],
+  "testimonials": [
+    {
+      "name": "Amal Benali",
+      "role": "Founder, Azura Studio",
+      "quote": "The team transformed our online presence and gave us clarity, performance, and confidence in our digital growth strategy.",
+      "avatar": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=200&q=80"
+    },
+    {
+      "name": "Youssef Idrissi",
+      "role": "Director, Horizon Logistics",
+      "quote": "Their UX and media buying expertise directly improved our traffic quality and lead conversion across every campaign.",
+      "avatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=200&q=80"
+    },
+    {
+      "name": "Sara El Mansouri",
+      "role": "Marketing Lead, Meraki Group",
+      "quote": "We needed a polished brand presence and a scalable marketing engine. They delivered both with precision.",
+      "avatar": "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=200&q=80"
+    }
+  ],
+  "stats": [
+    { "label": "Projects launched", "value": 180 },
+    { "label": "Client retention", "value": 96 },
+    { "label": "Growth campaigns", "value": 42 },
+    { "label": "Average ROAS", "value": 4.8 }
+  ]
+}

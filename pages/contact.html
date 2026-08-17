@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="تواصل معنا - نموذج الاتصال والبيانات الخاصة بنا">
+    <title>التواصل - الحلول الرقمية</title>
+    
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/navbar.css">
+    <link rel="stylesheet" href="../css/pages.css">
+    <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="../css/components.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="../index.html" class="nav-logo">
+                <div class="nav-logo-icon">D</div>
+                <span>الحلول الرقمية</span>
+            </a>
+            
+            <ul class="nav-menu" id="navMenu">
+                <li class="nav-menu-item">
+                    <a href="../index.html" class="nav-menu-link">الرئيسية</a>
+                </li>
+                <li class="nav-menu-item">
+                    <a href="services.html" class="nav-menu-link">الخدمات</a>
+                </li>
+                <li class="nav-menu-item">
+                    <a href="pricing.html" class="nav-menu-link">الباقات</a>
+                </li>
+                <li class="nav-menu-item">
+                    <a href="portfolio.html" class="nav-menu-link">الأعمال</a>
+                </li>
+                <li class="nav-menu-item">
+                    <a href="about.html" class="nav-menu-link">من نحن</a>
+                </li>
+                <li class="nav-menu-item">
+                    <a href="contact.html" class="nav-menu-link active">التواصل</a>
+                </li>
+            </ul>
+            
+            <div class="nav-cta">
+                <button class="nav-contact-btn" data-whatsapp>
+                    <span>💬</span>
+                    <span>تواصل معنا</span>
+                </button>
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero" style="min-height: 60vh;">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">تواصل <span class="highlight">معنا</span></h1>
+                <p class="hero-subtitle">نحن هنا للإجابة على جميع استفساراتك</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="light-bg">
+        <div class="container">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 60px; margin-bottom: 80px;">
+                <!-- Contact Form -->
+                <div>
+                    <h2 style="margin-bottom: 30px;">أرسل لنا رسالة</h2>
+                    
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">الاسم الكامل *</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">البريد الإلكتروني *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">رقم الهاتف</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="service">نوع الخدمة *</label>
+                            <select id="service" name="service" required>
+                                <option value="">اختر نوع الخدمة</option>
+                                <option value="website">تطوير موقع إلكتروني</option>
+                                <option value="app">تطوير تطبيق</option>
+                                <option value="marketing">تسويق رقمي</option>
+                                <option value="seo">تحسين SEO</option>
+                                <option value="maps">خدمات جوجل ماب</option>
+                                <option value="other">خدمة أخرى</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">رسالتك *</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary btn-large" style="width: 100%;">
+                            إرسال الرسالة
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Contact Info -->
+                <div>
+                    <h2 style="margin-bottom: 30px;">معلومات التواصل</h2>
+                    
+                    <!-- Phone -->
+                    <div style="margin-bottom: 40px; padding: 20px; background: white; border-radius: 12px; border: 1px solid var(--border-color);">
+                        <div style="display: flex; gap: 16px;">
+                            <div style="font-size: 2rem;">📞</div>
+                            <div>
+                                <h3 style="margin-bottom: 8px;">رقم الهاتف</h3>
+                                <p style="color: var(--text-gray);">
+                                    <a href="tel:+212696744427" style="color: var(--accent-blue); text-decoration: none;">
+                                        +212 696 744 427
+                                    </a>
+                                </p>
+                                <p style="color: var(--text-light-gray); font-size: 0.9rem;">
+                                    متاح من السبت إلى الخميس من 9:00 إلى 18:00
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- WhatsApp -->
+                    <div style="margin-bottom: 40px; padding: 20px; background: white; border-radius: 12px; border: 1px solid var(--border-color);">
+                        <div style="display: flex; gap: 16px;">
+                            <div style="font-size: 2rem;">💬</div>
+                            <div>
+                                <h3 style="margin-bottom: 8px;">تواصل عبر WhatsApp</h3>
+                                <p style="color: var(--text-gray);">
+                                    <a href="https://wa.me/212696744427" target="_blank" style="color: var(--accent-blue); text-decoration: none;">
+                                        اضغط هنا للدردشة الفورية
+                                    </a>
+                                </p>
+                                <p style="color: var(--text-light-gray); font-size: 0.9rem;">
+                                    الرد السريع متاح طول اليوم
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Email -->
+                    <div style="margin-bottom: 40px; padding: 20px; background: white; border-radius: 12px; border: 1px solid var(--border-color);">
+                        <div style="display: flex; gap: 16px;">
+                            <div style="font-size: 2rem;">📧</div>
+                            <div>
+                                <h3 style="margin-bottom: 8px;">البريد الإلكتروني</h3>
+                                <p style="color: var(--text-gray);">
+                                    <a href="mailto:contact@digitalsolutions.ma" style="color: var(--accent-blue); text-decoration: none;">
+                                        contact@digitalsolutions.ma
+                                    </a>
+                                </p>
+                                <p style="color: var(--text-light-gray); font-size: 0.9rem;">
+                                    سنرد عليك خلال 24 ساعة
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Address -->
+                    <div style="padding: 20px; background: white; border-radius: 12px; border: 1px solid var(--border-color);">
+                        <div style="display: flex; gap: 16px;">
+                            <div style="font-size: 2rem;">📍</div>
+                            <div>
+                                <h3 style="margin-bottom: 8px;">العنوان</h3>
+                                <p style="color: var(--text-gray);">
+                                    الدار البيضاء<br>
+                                    المغرب
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Response Times -->
+            <div style="padding: 40px; background: white; border-radius: 12px; border: 1px solid var(--border-color); margin-bottom: 80px;">
+                <h2 style="text-align: center; margin-bottom: 40px;">أوقات الاستجابة</h2>
+                
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px;">
+                    <div style="text-align: center;">
+                        <h4 style="color: var(--accent-blue); margin-bottom: 12px;">⚡ الرد السريع</h4>
+                        <p style="color: var(--text-gray);">
+                            استفسارات عبر WhatsApp يتم الرد عليها في الحال تقريباً خلال ساعات العمل
+                        </p>
+                    </div>
+                    
+                    <div style="text-align: center;">
+                        <h4 style="color: var(--accent-blue); margin-bottom: 12px;">📧 البريد الإلكتروني</h4>
+                        <p style="color: var(--text-gray);">
+                            نرد على جميع الرسائل البريدية خلال 24 ساعة كحد أقصى
+                        </p>
+                    </div>
+                    
+                    <div style="text-align: center;">
+                        <h4 style="color: var(--accent-blue); margin-bottom: 12px;">☎️ الاتصالات الهاتفية</h4>
+                        <p style="color: var(--text-gray);">
+                            متاحة من السبت إلى الخميس من التاسعة صباحاً إلى السادسة مساءً
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FAQ -->
+            <div style="padding: 40px; background: white; border-radius: 12px; border: 1px solid var(--border-color);">
+                <h2 style="text-align: center; margin-bottom: 40px;">أسئلة قد تطرحها</h2>
+                
+                <div style="max-width: 800px; margin: 0 auto;">
+                    <div style="padding: 20px 0; border-bottom: 1px solid var(--border-color);">
+                        <h4 style="margin-bottom: 12px;">كم الوقت المطلوب للرد على استفسارات؟</h4>
+                        <p style="color: var(--text-gray);">
+                            نحرص على الرد السريع على جميع الاستفسارات. معظم الاستفسارات يتم الرد عليها في نفس اليوم أو خلال 24 ساعة على الأكثر.
+                        </p>
+                    </div>
+                    
+                    <div style="padding: 20px 0; border-bottom: 1px solid var(--border-color);">
+                        <h4 style="margin-bottom: 12px;">هل يمكن الاتصال بكم خارج ساعات العمل؟</h4>
+                        <p style="color: var(--text-gray);">
+                            نعم، يمكنك التواصل عبر WhatsApp في أي وقت والرد سيكون متاحاً في أقرب فرصة. كما يمكنك إرسال بريد إلكتروني في أي وقت.
+                        </p>
+                    </div>
+                    
+                    <div style="padding: 20px 0; border-bottom: 1px solid var(--border-color);">
+                        <h4 style="margin-bottom: 12px;">هل هناك حد أدنى للمشاريع؟</h4>
+                        <p style="color: var(--text-gray);">
+                            لا، نرحب بجميع أحجام المشاريع من الصغيرة إلى الكبيرة. كل مشروع مهم بالنسبة لنا.
+                        </p>
+                    </div>
+                    
+                    <div style="padding: 20px 0;">
+                        <h4 style="margin-bottom: 12px;">هل يمكن الحصول على استشارة مجانية أولاً؟</h4>
+                        <p style="color: var(--text-gray);">
+                            بالتأكيد! نقدم استشارة مجانية لفهم احتياجات مشروعك قبل البدء. تواصل معنا للحصول على استشارتك.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>هل تريد استشارة مجانية؟</h2>
+                <p>تواصل معنا الآن ودعنا نناقش احتياجات مشروعك</p>
+                <button class="btn btn-primary-dark btn-large" data-whatsapp">
+                    ابدأ الآن
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>الحلول الرقمية</h4>
+                    <p>شركة متخصصة في تقديم حلول رقمية احترافية للشركات الصغيرة والمتوسطة</p>
+                    <div class="footer-social">
+                        <a href="#" class="social-link">f</a>
+                        <a href="#" class="social-link">in</a>
+                        <a href="#" class="social-link">𝕏</a>
+                        <a href="#" class="social-link">📷</a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>الروابط السريعة</h4>
+                    <ul>
+                        <li><a href="services.html">الخدمات</a></li>
+                        <li><a href="pricing.html">الباقات</a></li>
+                        <li><a href="portfolio.html">الأعمال</a></li>
+                        <li><a href="about.html">من نحن</a></li>
+                        <li><a href="contact.html">التواصل</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>تواصل معنا</h4>
+                    <div class="footer-contact">
+                        <div class="footer-contact-item">
+                            <div class="footer-contact-item-icon">📞</div>
+                            <div class="footer-contact-item-text">
+                                <a href="tel:+212696744427">+212 696 744 427</a>
+                            </div>
+                        </div>
+                        <div class="footer-contact-item">
+                            <div class="footer-contact-item-icon">💬</div>
+                            <div class="footer-contact-item-text">
+                                <a href="https://wa.me/212696744427" target="_blank">WhatsApp</a>
+                            </div>
+                        </div>
+                        <div class="footer-contact-item">
+                            <div class="footer-contact-item-icon">📧</div>
+                            <div class="footer-contact-item-text">
+                                <a href="mailto:contact@digitalsolutions.ma">contact@digitalsolutions.ma</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; <span id="year">2026</span> الحلول الرقمية. جميع الحقوق محفوظة.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/animations.js"></script>
+</body>
+</html>

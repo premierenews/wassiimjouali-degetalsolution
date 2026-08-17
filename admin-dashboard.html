@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Dashboard | SIT SWIM</title>
+  <meta name="description" content="Dashboard to manage SIT SWIM services, projects and testimonials." />
+  <link rel="stylesheet" href="css/main.css" />
+  <style>
+    body {
+      margin: 0;
+      background: #f3f7ff;
+      color: #11213d;
+      font-family: 'Segoe UI', sans-serif;
+    }
+    .dashboard-shell {
+      min-height: 100vh;
+      padding: 32px 20px 64px;
+    }
+    .dashboard-topbar {
+      max-width: 1200px;
+      margin: 0 auto 28px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .dashboard-grid {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 24px;
+    }
+    .dashboard-sidebar,
+    .dashboard-panel {
+      background: #fff;
+      border: 1px solid rgba(17, 33, 61, 0.08);
+      border-radius: 22px;
+      box-shadow: 0 18px 40px rgba(17, 33, 61, 0.08);
+    }
+    .dashboard-sidebar { padding: 24px; }
+    .dashboard-sidebar nav { display: grid; gap: 12px; }
+    .dashboard-sidebar a {
+      display: block; padding: 12px 16px; border-radius: 12px; color: #234; text-decoration: none; background: #f2f6ff;
+    }
+    .dashboard-panel { padding: 24px; }
+    .stats-row { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 16px; }
+    .stat-box {
+      background: linear-gradient(135deg, #eef5ff, #ffffff);
+      border: 1px solid rgba(47,124,255,0.12);
+      border-radius: 18px; padding: 20px;
+    }
+    .stat-box strong { font-size: 2rem; display: block; }
+    .tables { display: grid; gap: 20px; }
+    table {
+      width: 100%; border-collapse: collapse; margin-top: 12px; overflow: hidden; border-radius: 16px;
+      border: 1px solid rgba(17,33,61,0.08);
+    }
+    th, td { padding: 12px 14px; border-bottom: 1px solid rgba(17,33,61,0.08); text-align: left; }
+    @media (max-width: 860px) {
+      .dashboard-grid { grid-template-columns: 1fr; }
+      .stats-row { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="dashboard-shell">
+    <div class="dashboard-topbar">
+      <div>
+        <div class="badge" style="background: rgba(47,124,255,0.08); color: #2f7cff;">Dashboard</div>
+        <h1 style="margin-top: 10px;">Agency Control Center</h1>
+      </div>
+      <button class="btn btn-primary" id="logoutBtn">Logout</button>
+    </div>
+
+    <div class="dashboard-grid">
+      <aside class="dashboard-sidebar">
+        <nav>
+          <a href="#overview">Overview</a>
+          <a href="#projects">Projects</a>
+          <a href="#services">Services</a>
+          <a href="#testimonials">Testimonials</a>
+          <a href="index.html">View Website</a>
+        </nav>
+      </aside>
+
+      <main class="dashboard-panel">
+        <section id="overview">
+          <h2>Overview</h2>
+          <div class="stats-row">
+            <div class="stat-box"><span>Total projects</span><strong id="totalProjects">0</strong></div>
+            <div class="stat-box"><span>Services</span><strong id="totalServices">0</strong></div>
+            <div class="stat-box"><span>Testimonials</span><strong id="totalTestimonials">0</strong></div>
+          </div>
+        </section>
+
+        <section id="projects" class="tables" style="margin-top: 28px;">
+          <div>
+            <h3>Recent Projects</h3>
+            <table>
+              <thead>
+                <tr><th>Name</th><th>Category</th><th>Type</th></tr>
+              </thead>
+              <tbody id="projectTableBody"></tbody>
+            </table>
+          </div>
+        </section>
+
+        <section id="services" class="tables" style="margin-top: 28px;">
+          <div>
+            <h3>Services</h3>
+            <table>
+              <thead>
+                <tr><th>Title</th><th>Category</th><th>Icon</th></tr>
+              </thead>
+              <tbody id="serviceTableBody"></tbody>
+            </table>
+          </div>
+        </section>
+
+        <section id="testimonials" class="tables" style="margin-top: 28px;">
+          <div>
+            <h3>Testimonials</h3>
+            <table>
+              <thead>
+                <tr><th>Client</th><th>Role</th><th>Quote</th></tr>
+              </thead>
+              <tbody id="testimonialTableBody"></tbody>
+            </table>
+          </div>
+        </section>
+      </main>
+    </div>
+  </div>
+
+  <script>
+    // Load dashboard data from JSON and protect access.
+    const session = JSON.parse(localStorage.getItem('adminSession') || 'null');
+    if (!session || !session.loggedIn) {
+      window.location.href = 'admin-login.html';
+    }
+
+    document.getElementById('logoutBtn').addEventListener('click', function () {
+      localStorage.removeItem('adminSession');
+      window.location.href = 'admin-login.html';
+    });
+
+    fetch('data.json')
+      .then(response => response.json())
+      .then(data => {
+        document.getElementById('totalProjects').textContent = data.projects.length;
+        document.getElementById('totalServices').textContent = data.services.length;
+        document.getElementById('totalTestimonials').textContent = data.testimonials.length;
+
+        const projectBody = document.getElementById('projectTableBody');
+        data.projects.slice(0, 5).forEach(project => {
+          const row = document.createElement('tr');
+          row.innerHTML = `<td>${project.name}</td><td>${project.category}</td><td>${project.type}</td>`;
+          projectBody.appendChild(row);
+        });
+
+        const serviceBody = document.getElementById('serviceTableBody');
+        data.services.forEach(service => {
+          const row = document.createElement('tr');
+          row.innerHTML = `<td>${service.title}</td><td>${service.category}</td><td>${service.icon}</td>`;
+          serviceBody.appendChild(row);
+        });
+
+        const testimonialBody = document.getElementById('testimonialTableBody');
+        data.testimonials.forEach(item => {
+          const row = document.createElement('tr');
+          row.innerHTML = `<td>${item.name}</td><td>${item.role}</td><td>${item.quote.slice(0, 80)}...</td>`;
+          testimonialBody.appendChild(row);
+        });
+      })
+      .catch(() => {
+        document.body.insertAdjacentHTML('beforeend', '<p style="padding: 20px; color: #d93025;">Unable to load dashboard data.</p>');
+      });
+  </script>
+</body>
+</html>

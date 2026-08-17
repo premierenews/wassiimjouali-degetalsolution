@@ -1,0 +1,440 @@
+/* ==============================================
+   Palette de Couleurs Professionnelle
+   Noir (#1A1A1A) + Blanc (#FFFFFF) + Bleu (#0066FF)
+   ============================================== */
+
+:root {
+    /* Couleurs Principales */
+    --primary-dark: #1A1A1A;           /* Noir professionnel */
+    --primary-light: #FFFFFF;           /* Blanc pur */
+    --accent-blue: #0066FF;             /* Bleu professionnel */
+    --secondary-blue: #0052CC;          /* Bleu foncé */
+    --light-bg: #F8F9FA;                /* Gris clair */
+    --border-color: #E0E0E0;            /* Gris bordure */
+    --text-dark: #1A1A1A;               /* Texte foncé */
+    --text-gray: #666666;               /* Texte gris */
+    --text-light-gray: #999999;         /* Texte gris clair */
+    
+    /* Couleurs d'Accent */
+    --success: #28A745;
+    --warning: #FFC107;
+    --danger: #DC3545;
+    
+    /* Ombres */
+    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.15);
+    --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.2);
+    --shadow-xl: 0 20px 40px rgba(0, 0, 0, 0.25);
+    
+    /* Transitions */
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-fast: all 0.15s ease;
+}
+
+/* ==============================================
+   Reset & Base Styles
+   ============================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    background-color: var(--primary-light);
+    color: var(--text-dark);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* ==============================================
+   Typographie
+   ============================================== */
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+    color: var(--primary-dark);
+}
+
+h1 {
+    font-size: 3rem;
+    letter-spacing: -1px;
+}
+
+h2 {
+    font-size: 2.5rem;
+    letter-spacing: -0.5px;
+}
+
+h3 {
+    font-size: 1.75rem;
+}
+
+h4 {
+    font-size: 1.5rem;
+}
+
+h5 {
+    font-size: 1.25rem;
+}
+
+h6 {
+    font-size: 1rem;
+}
+
+p {
+    color: var(--text-gray);
+    margin-bottom: 1rem;
+    line-height: 1.7;
+}
+
+a {
+    color: var(--accent-blue);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+a:hover {
+    color: var(--secondary-blue);
+}
+
+/* ==============================================
+   Boutons
+   ============================================== */
+
+.btn {
+    display: inline-block;
+    padding: 14px 32px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    text-align: center;
+    text-decoration: none;
+    white-space: nowrap;
+    min-height: 48px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-primary {
+    background-color: var(--accent-blue);
+    color: var(--primary-light);
+    box-shadow: var(--shadow-md);
+}
+
+.btn-primary:hover {
+    background-color: var(--secondary-blue);
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-2px);
+}
+
+.btn-primary-dark {
+    background-color: var(--primary-dark);
+    color: var(--primary-light);
+    box-shadow: var(--shadow-md);
+}
+
+.btn-primary-dark:hover {
+    background-color: #333333;
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--accent-blue);
+    border: 2px solid var(--accent-blue);
+}
+
+.btn-secondary:hover {
+    background-color: var(--accent-blue);
+    color: var(--primary-light);
+}
+
+.btn-small {
+    padding: 10px 24px;
+    font-size: 0.9rem;
+    min-height: 40px;
+}
+
+.btn-large {
+    padding: 18px 48px;
+    font-size: 1.1rem;
+    min-height: 56px;
+}
+
+.btn-icon {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* ==============================================
+   Conteneur Principal
+   ============================================== */
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.container-fluid {
+    max-width: 100%;
+    padding: 0 20px;
+}
+
+/* ==============================================
+   Sections
+   ============================================== */
+
+section {
+    padding: 80px 0;
+}
+
+section.light-bg {
+    background-color: var(--light-bg);
+}
+
+section.dark-bg {
+    background-color: var(--primary-dark);
+    color: var(--primary-light);
+}
+
+section.dark-bg h2,
+section.dark-bg h3,
+section.dark-bg h4 {
+    color: var(--primary-light);
+}
+
+section.dark-bg p {
+    color: #CCCCCC;
+}
+
+/* ==============================================
+   Grille
+   ============================================== */
+
+.grid {
+    display: grid;
+    gap: 30px;
+}
+
+.grid-cols-2 {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.grid-cols-3 {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.grid-cols-4 {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+/* ==============================================
+   Cartes (Cards)
+   ============================================== */
+
+.card {
+    background: var(--primary-light);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: var(--transition);
+    border: 1px solid var(--border-color);
+}
+
+.card:hover {
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-4px);
+}
+
+.card-body {
+    padding: 30px;
+}
+
+.card-header {
+    padding: 30px;
+    border-bottom: 1px solid var(--border-color);
+    background-color: var(--light-bg);
+}
+
+.card-footer {
+    padding: 30px;
+    border-top: 1px solid var(--border-color);
+    background-color: var(--light-bg);
+}
+
+.card-title {
+    margin: 0 0 10px 0;
+    font-size: 1.25rem;
+}
+
+.card-text {
+    color: var(--text-gray);
+    margin: 0;
+}
+
+/* ==============================================
+   Utilitaires
+   ============================================== */
+
+.text-center {
+    text-align: center;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.mt-1 { margin-top: 0.5rem; }
+.mt-2 { margin-top: 1rem; }
+.mt-3 { margin-top: 1.5rem; }
+.mt-4 { margin-top: 2rem; }
+.mt-5 { margin-top: 3rem; }
+
+.mb-1 { margin-bottom: 0.5rem; }
+.mb-2 { margin-bottom: 1rem; }
+.mb-3 { margin-bottom: 1.5rem; }
+.mb-4 { margin-bottom: 2rem; }
+.mb-5 { margin-bottom: 3rem; }
+
+.mx-auto {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.opacity-75 { opacity: 0.75; }
+.opacity-50 { opacity: 0.5; }
+
+/* ==============================================
+   Animations
+   ============================================== */
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.8;
+    }
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* ==============================================
+   Responsive Design
+   ============================================== */
+
+@media (max-width: 1024px) {
+    h1 { font-size: 2.5rem; }
+    h2 { font-size: 2rem; }
+    h3 { font-size: 1.5rem; }
+    
+    section {
+        padding: 60px 0;
+    }
+    
+    .grid-cols-3,
+    .grid-cols-4 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    h1 { font-size: 2rem; }
+    h2 { font-size: 1.5rem; }
+    h3 { font-size: 1.25rem; }
+    
+    section {
+        padding: 40px 0;
+    }
+    
+    .grid-cols-2,
+    .grid-cols-3,
+    .grid-cols-4 {
+        grid-template-columns: 1fr;
+    }
+    
+    .btn {
+        width: 100%;
+        padding: 12px 24px;
+    }
+    
+    .card-body,
+    .card-header,
+    .card-footer {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    html {
+        font-size: 14px;
+    }
+    
+    h1 { font-size: 1.5rem; }
+    h2 { font-size: 1.25rem; }
+    h3 { font-size: 1.1rem; }
+    
+    section {
+        padding: 30px 0;
+    }
+}

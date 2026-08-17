@@ -1,0 +1,372 @@
+<!-- 
+=============================================================
+ملف مثال لاستخدام المشروع - Example.html
+هذا الملف يحتوي على أمثلة عملية
+=============================================================
+-->
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>أمثلة استخدام المشروع</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <style>
+        .example-section {
+            background: white;
+            padding: 2rem;
+            margin: 2rem 0;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+        }
+        .code-block {
+            background: #0f172a;
+            color: #d1d5db;
+            padding: 1.5rem;
+            border-radius: 8px;
+            overflow-x: auto;
+            font-family: 'Courier New', monospace;
+            margin: 1rem 0;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+        .demo-area {
+            background: #f8fafc;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-top: 1rem;
+            border: 2px dashed #e2e8f0;
+        }
+    </style>
+</head>
+<body>
+    <!-- شريط التنقل -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <h1>🚀 أمثلة المشروع</h1>
+            </div>
+            <ul class="nav-menu" id="navMenu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">الرئيسية</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link active">الأمثلة</a>
+                </li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <div style="max-width: 1000px; margin: 3rem auto; padding: 0 1rem;">
+        <h1 style="text-align: center; margin-bottom: 3rem;">أمثلة عملية على استخدام المشروع</h1>
+
+        <!-- مثال 1: الإخطارات -->
+        <div class="example-section">
+            <h2>📢 مثال 1: الإخطارات</h2>
+            <p>استخدام الإخطارات لعرض الرسائل للمستخدم:</p>
+            
+            <div class="code-block">
+// إظهار إخطار نجاح<br>
+showNotification('تم إرسال الرسالة بنجاح', 'success');<br>
+<br>
+// إظهار إخطار خطأ<br>
+showNotification('حدث خطأ ما', 'error');<br>
+<br>
+// إظهار تحذير<br>
+showNotification('تأكد من المدخلات', 'warning');<br>
+<br>
+// إظهار معلومة<br>
+showNotification('هذه معلومة مهمة', 'info');
+            </div>
+
+            <div class="demo-area">
+                <button class="btn btn-primary" onclick="showNotification('تم النقر على الزر!', 'success')">
+                    اضغط لعرض إخطار
+                </button>
+            </div>
+        </div>
+
+        <!-- مثال 2: الحركات -->
+        <div class="example-section">
+            <h2>🎬 مثال 2: الحركات والرسوم المتحركة</h2>
+            <p>استخدام مكتبة الحركات المدمجة:</p>
+
+            <div class="code-block">
+// ظهور تدريجي<br>
+Animations.fadeIn('.element');<br>
+<br>
+// دوران<br>
+Animations.rotate('.element');<br>
+<br>
+// قفز<br>
+Animations.bounce('.element');<br>
+<br>
+// نبض<br>
+Animations.pulse('.element');<br>
+<br>
+// اهتزاز<br>
+Animations.shake('.element');
+            </div>
+
+            <div class="demo-area">
+                <div id="animateBox" style="
+                    background: linear-gradient(135deg, #6366f1 0%, #ec4899 100%);
+                    width: 100px;
+                    height: 100px;
+                    border-radius: 12px;
+                    margin: 1rem auto;
+                "></div>
+
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); gap: 1rem;">
+                    <button class="btn btn-primary" onclick="Animations.bounce('#animateBox')">قفز</button>
+                    <button class="btn btn-primary" onclick="Animations.rotate('#animateBox')">دوران</button>
+                    <button class="btn btn-primary" onclick="Animations.pulse('#animateBox')">نبض</button>
+                    <button class="btn btn-primary" onclick="Animations.shake('#animateBox')">اهتزاز</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- مثال 3: إدارة الواجهة -->
+        <div class="example-section">
+            <h2>🖼️ مثال 3: إدارة واجهة المستخدم</h2>
+            <p>استخدام مكتبة UI لإدارة العناصر:</p>
+
+            <div class="code-block">
+// إظهار/إخفاء عناصر<br>
+UI.show('.element');<br>
+UI.hide('.element');<br>
+UI.toggle('.element');<br>
+<br>
+// تغيير النصوص<br>
+UI.setText('.element', 'نص جديد');<br>
+<br>
+// إضافة/إزالة فئات<br>
+UI.addClass('.element', 'active');<br>
+UI.removeClass('.element', 'active');
+            </div>
+
+            <div class="demo-area">
+                <div id="uiDemo" style="
+                    background: #6366f1;
+                    color: white;
+                    padding: 1rem;
+                    border-radius: 8px;
+                    text-align: center;
+                    margin-bottom: 1rem;
+                ">هذا النص سيتغير</div>
+
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 1rem;">
+                    <button class="btn btn-primary" onclick="UI.setText('#uiDemo', 'تم تغيير النص!')">غير النص</button>
+                    <button class="btn btn-primary" onclick="UI.hide('#uiDemo')">أخفِ</button>
+                    <button class="btn btn-primary" onclick="UI.show('#uiDemo')">أظهر</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- مثال 4: تخزين البيانات -->
+        <div class="example-section">
+            <h2>💾 مثال 4: تخزين البيانات محلياً</h2>
+            <p>حفظ واسترجاع البيانات باستخدام localStorage:</p>
+
+            <div class="code-block">
+// حفظ البيانات<br>
+saveData('userName', 'أحمد');<br>
+saveData('userAge', 25);<br>
+<br>
+// استرجاع البيانات<br>
+let name = getData('userName');<br>
+<br>
+// حذف البيانات<br>
+removeData('userName');
+            </div>
+
+            <div class="demo-area">
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                    <div>
+                        <label for="storageInput">أدخل اسماً:</label>
+                        <input type="text" id="storageInput" placeholder="اسمك" 
+                               style="width: 100%; padding: 0.5rem; border-radius: 4px; border: 1px solid #e2e8f0; margin-top: 0.5rem;">
+                    </div>
+                    <div>
+                        <label for="storageKey">مفتاح التخزين:</label>
+                        <input type="text" id="storageKey" placeholder="key" value="myName"
+                               style="width: 100%; padding: 0.5rem; border-radius: 4px; border: 1px solid #e2e8f0; margin-top: 0.5rem;">
+                    </div>
+                </div>
+
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 1rem; margin-top: 1rem;">
+                    <button class="btn btn-primary" onclick="saveData(document.getElementById('storageKey').value, document.getElementById('storageInput').value); showNotification('تم الحفظ', 'success')">احفظ</button>
+                    <button class="btn btn-primary" onclick="let val = getData(document.getElementById('storageKey').value); alert('القيمة: ' + val)">استرجع</button>
+                    <button class="btn btn-primary" onclick="removeData(document.getElementById('storageKey').value); showNotification('تم الحذف', 'success')">احذف</button>
+                </div>
+
+                <div id="storageDisplay" style="margin-top: 1rem; padding: 1rem; background: white; border-radius: 4px; border: 1px solid #e2e8f0;"></div>
+            </div>
+        </div>
+
+        <!-- مثال 5: النماذج -->
+        <div class="example-section">
+            <h2>📝 مثال 5: معالجة النماذج</h2>
+            <p>التعامل مع النماذج والتحقق من الصحة:</p>
+
+            <div class="code-block">
+// التحقق من صحة النموذج<br>
+let isValid = UI.validateForm('#myForm');<br>
+<br>
+// الحصول على بيانات النموذج<br>
+let data = UI.getFormData('#myForm');<br>
+console.log(data);
+            </div>
+
+            <div class="demo-area">
+                <form id="demoForm">
+                    <div class="form-group" style="margin-bottom: 1rem;">
+                        <label for="demoName">الاسم:</label>
+                        <input type="text" id="demoName" name="name" 
+                               style="width: 100%; padding: 0.5rem; border-radius: 4px; border: 1px solid #e2e8f0; margin-top: 0.5rem;">
+                    </div>
+
+                    <div class="form-group" style="margin-bottom: 1rem;">
+                        <label for="demoEmail">البريد الإلكتروني:</label>
+                        <input type="email" id="demoEmail" name="email"
+                               style="width: 100%; padding: 0.5rem; border-radius: 4px; border: 1px solid #e2e8f0; margin-top: 0.5rem;">
+                    </div>
+
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                        <button type="button" class="btn btn-primary" onclick="if(UI.validateForm('#demoForm')) showNotification('النموذج صحيح!', 'success'); else showNotification('أكمل الحقول', 'error')">تحقق</button>
+                        <button type="button" class="btn btn-primary" onclick="let data = UI.getFormData('#demoForm'); console.log(data); showNotification('تم جلب البيانات', 'info')">احصل على البيانات</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- مثال 6: Modals -->
+        <div class="example-section">
+            <h2>📦 مثال 6: نوافذ منفثقة (Modals)</h2>
+            <p>عرض محتوى في نوافذ منفثقة:</p>
+
+            <div class="code-block">
+let content = '&lt;h3&gt;مرحباً!&lt;/h3&gt;&lt;p&gt;هذا محتوى النافذة المنفثقة&lt;/p&gt;';<br>
+UI.showModal(content, 'العنوان');
+            </div>
+
+            <div class="demo-area">
+                <button class="btn btn-primary" onclick="UI.showModal('<h3>مرحباً بك!</h3><p>هذه نافذة منفثقة جميلة</p><p>يمكنك إغلاقها بسهولة</p>', 'النافذة المنفثقة')">
+                    فتح نافذة منفثقة
+                </button>
+            </div>
+        </div>
+
+        <!-- مثال 7: Parallax Effect -->
+        <div class="example-section">
+            <h2>🌍 مثال 7: تأثير Parallax</h2>
+            <p>حركة الخلفية ببطء أثناء التمرير:</p>
+
+            <div class="code-block">
+Animations.parallax('.parallax-element', 0.5);
+            </div>
+
+            <div class="demo-area" style="height: 300px; overflow-y: scroll; background: linear-gradient(180deg, #6366f1 0%, #ec4899 100%); border-radius: 8px; position: relative;">
+                <div id="parallaxDemo" style="
+                    width: 100%;
+                    height: 400px;
+                    background: white;
+                    margin-top: 500px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-size: 2rem;
+                ">📍 Parallax Element</div>
+            </div>
+        </div>
+
+        <!-- ملخص الدوال الرئيسية -->
+        <div class="example-section">
+            <h2>📚 ملخص الدوال الرئيسية</h2>
+            <table style="width: 100%; border-collapse: collapse;">
+                <thead style="background: #6366f1; color: white;">
+                    <tr>
+                        <th style="padding: 1rem; text-align: right;">الدالة</th>
+                        <th style="padding: 1rem; text-align: right;">الوصف</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr style="border-bottom: 1px solid #e2e8f0;">
+                        <td style="padding: 1rem; font-family: monospace;">showNotification()</td>
+                        <td style="padding: 1rem;">عرض إخطار للمستخدم</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #e2e8f0;">
+                        <td style="padding: 1rem; font-family: monospace;">saveData()</td>
+                        <td style="padding: 1rem;">حفظ البيانات في localStorage</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #e2e8f0;">
+                        <td style="padding: 1rem; font-family: monospace;">getData()</td>
+                        <td style="padding: 1rem;">استرجاع البيانات من localStorage</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #e2e8f0;">
+                        <td style="padding: 1rem; font-family: monospace;">log()</td>
+                        <td style="padding: 1rem;">تسجيل الرسائل في console</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #e2e8f0;">
+                        <td style="padding: 1rem; font-family: monospace;">UI.show() / hide()</td>
+                        <td style="padding: 1rem;">إظهار/إخفاء العناصر</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 1rem; font-family: monospace;">Animations.*</td>
+                        <td style="padding: 1rem;">مكتبة الحركات والرسوم المتحركة</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- التذييل -->
+    <footer class="footer" style="margin-top: 3rem;">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>عن الموقع</h4>
+                <p>مشروع ويب ضخم يجمع بين الجودة والأمان والأداء العالي</p>
+            </div>
+            <div class="footer-section">
+                <h4>الروابط</h4>
+                <ul>
+                    <li><a href="index.html">الرئيسية</a></li>
+                    <li><a href="#">عن الموقع</a></li>
+                    <li><a href="#">التواصل</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>تابعنا</h4>
+                <div class="social-links">
+                    <a href="#">Facebook</a>
+                    <a href="#">Twitter</a>
+                    <a href="#">Instagram</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 جميع الحقوق محفوظة - مشروع ويب</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/animations.js"></script>
+
+    <script>
+        // تهيئة Parallax عند التحميل
+        document.addEventListener('DOMContentLoaded', function() {
+            Animations.parallax('#parallaxDemo', 0.3);
+            log('تم تحميل صفحة الأمثلة');
+        });
+    </script>
+</body>
+</html>

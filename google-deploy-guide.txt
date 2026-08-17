@@ -1,0 +1,23 @@
+Google publishing guide for SIT SWIM Services
+
+Option 1 - Fastest: publish as a simple website on GitHub Pages
+1. Create a GitHub account if you do not have one.
+2. Create a new repository named: sit-swim-services
+3. Upload all files from this folder to the repository.
+4. In GitHub, open the repository and go to Settings > Pages.
+5. Under Source, choose GitHub Actions.
+6. The workflow file already exists in .github/workflows/deploy-pages.yml.
+7. Commit and push the files.
+8. Wait a few minutes, then open the generated URL.
+
+Expected URL format:
+https://your-username.github.io/sit-swim-services/
+
+Option 2 - Publish as a local Google Chrome site
+1. Open the folder in File Explorer.
+2. Double-click launch.bat to open the page in Chrome.
+3. To share it, you can use a public URL only if you upload it to GitHub Pages, Netlify, or Vercel.
+
+Important note:
+Google Chrome itself does not provide a free public URL for a local folder.
+To make the site reachable by anyone on the internet, use GitHub Pages or another hosting service.

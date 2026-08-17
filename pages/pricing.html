@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="باقات وأسعار خدماتنا - اختر الباقة المناسبة لميزانيتك">
+    <title>الباقات والأسعار - الحلول الرقمية</title>
+    
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/navbar.css">
+    <link rel="stylesheet" href="../css/pages.css">
+    <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="../css/components.css">
+    
+    <style>
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .pricing-card {
+            border: 2px solid var(--border-color);
+            border-radius: 12px;
+            padding: 40px 30px;
+            text-align: center;
+            position: relative;
+            transition: var(--transition);
+            background: white;
+        }
+        
+        .pricing-card:hover {
+            border-color: var(--accent-blue);
+            box-shadow: var(--shadow-lg);
+            transform: translateY(-10px);
+        }
+        
+        .pricing-card.featured {
+            border-color: var(--accent-blue);
+            background: linear-gradient(135deg, rgba(0, 102, 255, 0.05), rgba(0, 82, 204, 0.05));
+            transform: scale(1.05);
+        }
+        
+        .pricing-card.featured:hover {
+            transform: scale(1.05) translateY(-10px);
+        }
+        
+        .pricing-badge {
+            position: absolute;
+            top: 0;
+            left: 20px;
+            background: var(--accent-blue);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 0 0 8px 8px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+        
+        .pricing-title {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            margin-top: 20px;
+        }
+        
+        .pricing-price {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--accent-blue);
+            margin-bottom: 10px;
+        }
+        
+        .pricing-period {
+            color: var(--text-gray);
+            margin-bottom: 30px;
+            font-size: 0.9rem;
+        }
+        
+        .pricing-description {
+            color: var(--text-gray);
+            margin-bottom: 30px;
+            min-height: 60px;
+        }
+        
+        .pricing-features {
+            text-align: left;
+            margin-bottom: 30px;
+            padding: 20px 0;
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        .pricing-features li {
+            list-style: none;
+            padding: 12px 0;
+            padding-left: 24px;
+            position: relative;
+            color: var(--text-gray);
+            font-size: 0.95rem;
+        }
+        
+        .pricing-features li:before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--accent-blue);
+            font-weight: bold;
+        }
+        
+        .pricing-features li.disabled {
+            color: #CCCCCC;
+            text-decoration: line-through;
+        }
+        
+        .pricing-features li.disabled:before {
+            content: '✕';
+            color: #999999;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="../index.html" class="nav-logo">
+                <div class="nav-logo-icon">D</div>
+                <span>الحلول الرقمية</span>
+            </a>
+            
+            <ul class="nav-menu" id="navMenu">
+                <li class="nav-menu-item">
+                    <a href="../index.html" class="nav-menu-link">الرئيسية</a>
+                </li>
+                <li class="nav-menu-item">
+                    <a href="services.html" class="nav-menu-link">الخدمات</a>
+                </li>
+                <li class="nav-menu-item">
+                    <a href="pricing.html" class="nav-menu-link active">الباقات</a>
+                </li>
+                <li class="nav-menu-item">
+                    <a href="portfolio.html" class="nav-menu-link">الأعمال</a>
+                </li>
+                <li class="nav-menu-item">
+                    <a href="about.html" class="nav-menu-link">من نحن</a>
+                </li>
+                <li class="nav-menu-item">
+                    <a href="contact.html" class="nav-menu-link">التواصل</a>
+                </li>
+            </ul>
+            
+            <div class="nav-cta">
+                <button class="nav-contact-btn" data-whatsapp>
+                    <span>💬</span>
+                    <span>تواصل معنا</span>
+                </button>
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero" style="min-height: 60vh;">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">باقات <span class="highlight">مرنة</span> بأسعار عادلة</h1>
+                <p class="hero-subtitle">اختر الباقة التي تناسب احتياجات وميزانية مشروعك</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="light-bg">
+        <div class="container">
+            <div class="pricing-grid">
+                <!-- Basic Package -->
+                <div class="pricing-card">
+                    <h3 class="pricing-title">الباقة الأساسية</h3>
+                    <div class="pricing-price">29</div>
+                    <div class="pricing-period">درهم/شهر</div>
+                    <div class="pricing-description">مثالية للمتاجر الصغيرة والشركات الناشئة</div>
+                    
+                    <ul class="pricing-features">
+                        <li>موقع إلكتروني بسيط</li>
+                        <li>عدد صفحات: 5 - 10</li>
+                        <li>تصميم responsive</li>
+                        <li>بريد إلكتروني مجاني</li>
+                        <li class="disabled">نموذج اتصال متقدم</li>
+                        <li class="disabled">تحسين SEO</li>
+                        <li class="disabled">تحليلات شاملة</li>
+                    </ul>
+                    
+                    <button class="btn btn-primary btn-large" data-whatsapp">
+                        ابدأ الآن
+                    </button>
+                </div>
+
+                <!-- Standard Package -->
+                <div class="pricing-card featured">
+                    <div class="pricing-badge">الأكثر شهرة</div>
+                    <h3 class="pricing-title">الباقة المتوسطة</h3>
+                    <div class="pricing-price">99</div>
+                    <div class="pricing-period">درهم/شهر</div>
+                    <div class="pricing-description">الخيار الأمثل لمعظم الشركات</div>
+                    
+                    <ul class="pricing-features">
+                        <li>موقع إلكتروني احترافي</li>
+                        <li>عدد صفحات: 10 - 20</li>
+                        <li>تصميم responsive متقدم</li>
+                        <li>نموذج اتصال متقدم</li>
+                        <li>بريد إلكتروني مخصص</li>
+                        <li>تحسين SEO أساسي</li>
+                        <li>Google Analytics</li>
+                    </ul>
+                    
+                    <button class="btn btn-primary btn-large" data-whatsapp">
+                        ابدأ الآن
+                    </button>
+                </div>
+
+                <!-- Premium Package -->
+                <div class="pricing-card">
+                    <h3 class="pricing-title">الباقة المميزة</h3>
+                    <div class="pricing-price">299</div>
+                    <div class="pricing-period">درهم/شهر</div>
+                    <div class="pricing-description">الحل الشامل للشركات الكبيرة</div>
+                    
+                    <ul class="pricing-features">
+                        <li>موقع إلكتروني متقدم جداً</li>
+                        <li>صفحات غير محدودة</li>
+                        <li>تصميم premium مخصص</li>
+                        <li>متجر إلكتروني كامل</li>
+                        <li>نظام إدارة متقدم</li>
+                        <li>تحسين SEO شامل</li>
+                        <li>تقارير تحليلية شهرية</li>
+                    </ul>
+                    
+                    <button class="btn btn-primary btn-large" data-whatsapp">
+                        ابدأ الآن
+                    </button>
+                </div>
+            </div>
+
+            <!-- Additional Services -->
+            <div style="margin-top: 80px; padding: 40px; background: white; border-radius: 12px; border: 1px solid var(--border-color);">
+                <h2 style="text-align: center; margin-bottom: 40px;">خدمات إضافية</h2>
+                
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px;">
+                    <div style="text-align: center; padding: 20px;">
+                        <h4 style="margin-bottom: 12px;">🌐 تطوير تطبيق</h4>
+                        <p style="color: var(--text-gray); margin-bottom: 16px;">تطبيق احترافي لـ iOS و Android</p>
+                        <p style="font-size: 1.5rem; color: var(--accent-blue); font-weight: 700;">من 999 درهم</p>
+                    </div>
+                    
+                    <div style="text-align: center; padding: 20px;">
+                        <h4 style="margin-bottom: 12px;">📊 تسويق رقمي</h4>
+                        <p style="color: var(--text-gray); margin-bottom: 16px;">إدارة حملات إعلانية احترافية</p>
+                        <p style="font-size: 1.5rem; color: var(--accent-blue); font-weight: 700;">من 500 درهم</p>
+                    </div>
+                    
+                    <div style="text-align: center; padding: 20px;">
+                        <h4 style="margin-bottom: 12px;">🔍 تحسين SEO</h4>
+                        <p style="color: var(--text-gray); margin-bottom: 16px;">ظهور متقدم في محركات البحث</p>
+                        <p style="font-size: 1.5rem; color: var(--accent-blue); font-weight: 700;">من 300 درهم</p>
+                    </div>
+                    
+                    <div style="text-align: center; padding: 20px;">
+                        <h4 style="margin-bottom: 12px;">🎨 تصميم جرافيكي</h4>
+                        <p style="color: var(--text-gray); margin-bottom: 16px;">تصاميم احترافية للعلامات التجارية</p>
+                        <p style="font-size: 1.5rem; color: var(--accent-blue); font-weight: 700;">من 200 درهم</p>
+                    </div>
+                    
+                    <div style="text-align: center; padding: 20px;">
+                        <h4 style="margin-bottom: 12px;">🗺️ Google Maps</h4>
+                        <p style="color: var(--text-gray); margin-bottom: 16px;">تحسين ملف تعريفك على جوجل</p>
+                        <p style="font-size: 1.5rem; color: var(--accent-blue); font-weight: 700;">من 150 درهم</p>
+                    </div>
+                    
+                    <div style="text-align: center; padding: 20px;">
+                        <h4 style="margin-bottom: 12px;">📱 صيانة وتحديثات</h4>
+                        <p style="color: var(--text-gray); margin-bottom: 16px;">دعم فني وصيانة دورية</p>
+                        <p style="font-size: 1.5rem; color: var(--accent-blue); font-weight: 700;">من 100 درهم</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FAQ -->
+            <div style="margin-top: 80px; padding: 40px; background: white; border-radius: 12px; border: 1px solid var(--border-color);">
+                <h2 style="text-align: center; margin-bottom: 40px;">الأسئلة الشائعة</h2>
+                
+                <div style="max-width: 800px; margin: 0 auto;">
+                    <div style="padding: 20px 0; border-bottom: 1px solid var(--border-color);">
+                        <h4 style="margin-bottom: 12px;">هل يمكن تغيير الباقة لاحقاً؟</h4>
+                        <p style="color: var(--text-gray);">نعم، بكل تأكيد! يمكنك الترقية أو التنزيل في أي وقت حسب احتياجات مشروعك.</p>
+                    </div>
+                    
+                    <div style="padding: 20px 0; border-bottom: 1px solid var(--border-color);">
+                        <h4 style="margin-bottom: 12px;">هل هناك فترة تجربة مجانية؟</h4>
+                        <p style="color: var(--text-gray);">نعم، نقدم استشارة مجانية لفهم احتياجات مشروعك قبل البدء.</p>
+                    </div>
+                    
+                    <div style="padding: 20px 0; border-bottom: 1px solid var(--border-color);">
+                        <h4 style="margin-bottom: 12px;">هل يتضمن الدعم الفني؟</h4>
+                        <p style="color: var(--text-gray);">نعم، جميع الباقات تتضمن دعم فني أساسي. الباقات الأعلى توفر دعم أولويات أعلى.</p>
+                    </div>
+                    
+                    <div style="padding: 20px 0;">
+                        <h4 style="margin-bottom: 12px;">ما هي طرق الدفع المتاحة؟</h4>
+                        <p style="color: var(--text-gray);">نقبل التحويل البنكي، بطاقات الائتمان، و محافظ رقمية. تواصل معنا للمزيد من التفاصيل.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>لم تجد الباقة المناسبة؟</h2>
+                <p>نمكننا تخصيص باقة خاصة بك حسب احتياجات مشروعك</p>
+                <button class="btn btn-primary-dark btn-large" data-whatsapp">
+                    اطلب عرض سعر مخصص
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>الحلول الرقمية</h4>
+                    <p>شركة متخصصة في تقديم حلول رقمية احترافية للشركات الصغيرة والمتوسطة</p>
+                    <div class="footer-social">
+                        <a href="#" class="social-link">f</a>
+                        <a href="#" class="social-link">in</a>
+                        <a href="#" class="social-link">𝕏</a>
+                        <a href="#" class="social-link">📷</a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>الروابط السريعة</h4>
+                    <ul>
+                        <li><a href="services.html">الخدمات</a></li>
+                        <li><a href="pricing.html">الباقات</a></li>
+                        <li><a href="portfolio.html">الأعمال</a></li>
+                        <li><a href="about.html">من نحن</a></li>
+                        <li><a href="contact.html">التواصل</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>تواصل معنا</h4>
+                    <div class="footer-contact">
+                        <div class="footer-contact-item">
+                            <div class="footer-contact-item-icon">📞</div>
+                            <div class="footer-contact-item-text">
+                                <a href="tel:+212696744427">+212 696 744 427</a>
+                            </div>
+                        </div>
+                        <div class="footer-contact-item">
+                            <div class="footer-contact-item-icon">💬</div>
+                            <div class="footer-contact-item-text">
+                                <a href="https://wa.me/212696744427" target="_blank">WhatsApp</a>
+                            </div>
+                        </div>
+                        <div class="footer-contact-item">
+                            <div class="footer-contact-item-icon">📧</div>
+                            <div class="footer-contact-item-text">
+                                <a href="mailto:contact@digitalsolutions.ma">contact@digitalsolutions.ma</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; <span id="year">2026</span> الحلول الرقمية. جميع الحقوق محفوظة.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/animations.js"></script>
+</body>
+</html>

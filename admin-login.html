@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Login | SIT SWIM</title>
+  <meta name="description" content="Administrator login for SIT SWIM Services dashboard." />
+  <link rel="stylesheet" href="css/main.css" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #07111f 0%, #0d1a2b 100%);
+      color: #f5f7fb;
+    }
+    .admin-shell {
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      padding: 32px 20px;
+    }
+    .admin-card {
+      width: min(480px, 100%);
+      background: rgba(16, 28, 49, 0.85);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 24px;
+      padding: 32px;
+      box-shadow: 0 25px 60px rgba(0,0,0,0.35);
+    }
+    .admin-card h1 {
+      margin-bottom: 10px;
+      font-size: clamp(2rem, 3vw, 2.4rem);
+    }
+    .admin-card p { color: #a8b3c7; }
+    .admin-form { display: grid; gap: 16px; margin-top: 24px; }
+    .admin-form input {
+      width: 100%;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(255,255,255,0.04);
+      color: #f5f7fb;
+      padding: 14px 16px;
+    }
+    .admin-actions { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+    .badge { display: inline-flex; align-items: center; gap: 8px; padding: 8px 12px; border-radius: 999px; background: rgba(23,214,181,0.12); color: #17d6b5; font-size: 0.8rem; }
+    @media (max-width: 520px) {
+      .admin-card { padding: 24px 18px; }
+      .admin-actions { align-items: stretch; }
+      .admin-actions .btn { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+  <div class="admin-shell">
+    <div class="admin-card">
+      <div class="badge">SIT SWIM Admin</div>
+      <h1>Welcome back</h1>
+      <p>Sign in to manage projects, services, and testimonials.</p>
+      <form class="admin-form" id="adminLoginForm">
+        <label>
+          <span>Email</span>
+          <input type="email" name="email" placeholder="admin@sitswim.com" required />
+        </label>
+        <label>
+          <span>Password</span>
+          <input type="password" name="password" placeholder="••••••••" required />
+        </label>
+        <div class="admin-actions">
+          <a href="index.html" class="btn btn-secondary">Back to site</a>
+          <button type="submit" class="btn btn-primary">Login</button>
+        </div>
+      </form>
+      <p id="loginStatus" aria-live="polite"></p>
+    </div>
+  </div>
+
+  <script>
+    // Authenticate admin login and redirect to dashboard.
+    document.getElementById('adminLoginForm').addEventListener('submit', function (event) {
+      event.preventDefault();
+      const form = new FormData(this);
+      const email = String(form.get('email') || '').trim();
+      const password = String(form.get('password') || '').trim();
+      const status = document.getElementById('loginStatus');
+
+      if (email && password) {
+        localStorage.setItem('adminSession', JSON.stringify({ email, loggedIn: true }));
+        status.textContent = 'Login successful. Redirecting…';
+        status.style.color = '#17d6b5';
+        setTimeout(() => {
+          window.location.href = 'admin-dashboard.html';
+        }, 700);
+      } else {
+        status.textContent = 'Please provide valid credentials.';
+        status.style.color = '#ff8a80';
+      }
+    });
+  </script>
+</body>
+</html>

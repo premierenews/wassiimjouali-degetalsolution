@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="SIT SWIM Services | حلول رقمية احترافية في الرباط أكدال">
+    <meta name="keywords" content="SIT SWIM Services, الرباط أكدال, تطوير مواقع, تسويق رقمي, خدمات رقمية">
+    <meta name="author" content="SIT SWIM Services">
+    <title>SIT SWIM Services | Digital Solutions in Rabat Agdal</title>
+    <style>
+        :root {
+            --bg: #07111f;
+            --surface: #101c31;
+            --text: #f5f7fb;
+            --muted: #a8b3c7;
+            --primary: #2f7cff;
+            --primary-2: #5db3ff;
+            --accent: #17d6b5;
+            --border: rgba(255,255,255,0.12);
+            --shadow: 0 20px 45px rgba(0,0,0,0.28);
+        }
+        * { box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            margin: 0;
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, var(--bg), #0b172b 60%, #102035);
+            color: var(--text);
+            line-height: 1.7;
+        }
+        a { color: inherit; text-decoration: none; }
+        .container { width: min(1120px, calc(100% - 32px)); margin: 0 auto; }
+        .topbar { background: rgba(7, 17, 31, 0.92); backdrop-filter: blur(10px); position: sticky; top: 0; z-index: 20; border-bottom: 1px solid var(--border); }
+        .nav { display: flex; align-items: center; justify-content: space-between; padding: 16px 0; }
+        .brand { font-weight: 800; letter-spacing: 0.04em; font-size: 1.08rem; }
+        .nav-links { display: flex; gap: 18px; align-items: center; }
+        .nav-links a { color: var(--muted); font-size: 0.96rem; }
+        .nav-links a:hover { color: var(--text); }
+        .btn { display: inline-flex; align-items: center; justify-content: center; border: 0; border-radius: 999px; padding: 12px 18px; font-weight: 700; cursor: pointer; transition: transform 0.2s ease, box-shadow 0.2s ease; }
+        .btn:hover { transform: translateY(-2px); }
+        .btn-primary { background: linear-gradient(90deg, var(--primary), var(--primary-2)); color: white; box-shadow: var(--shadow); }
+        .btn-secondary { background: rgba(255,255,255,0.08); color: var(--text); border: 1px solid var(--border); }
+        .hero { padding: 70px 0 48px; }
+        .hero-grid { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 32px; align-items: center; }
+        .eyebrow { display: inline-block; background: rgba(23,214,181,0.16); color: var(--accent); padding: 8px 12px; border-radius: 999px; font-weight: 700; margin-bottom: 16px; font-size: 0.9rem; }
+        h1, h2, h3 { line-height: 1.2; margin: 0 0 12px; }
+        h1 { font-size: clamp(2rem, 4vw, 3.2rem); }
+        .lead { font-size: 1.05rem; color: var(--muted); max-width: 680px; }
+        .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 24px; }
+        .hero-card { background: rgba(255,255,255,0.04); border: 1px solid var(--border); border-radius: 24px; padding: 24px; box-shadow: var(--shadow); }
+        .hero-card ul { padding-right: 18px; color: var(--muted); }
+        .section { padding: 38px 0 18px; }
+        .section-title { font-size: 1.6rem; margin-bottom: 16px; }
+        .cards { display: grid; gap: 18px; grid-template-columns: repeat(3, minmax(0, 1fr)); }
+        .card { background: var(--surface); border: 1px solid var(--border); border-radius: 22px; padding: 22px; box-shadow: var(--shadow); }
+        .card p { color: var(--muted); margin: 8px 0 0; }
+        .contact-grid { display: grid; grid-template-columns: 0.95fr 1.05fr; gap: 22px; align-items: start; }
+        .info-list { display: grid; gap: 12px; margin-top: 16px; }
+        .info-item { background: rgba(255,255,255,0.04); border: 1px solid var(--border); padding: 14px 16px; border-radius: 16px; }
+        form { display: grid; gap: 12px; }
+        input, textarea { width: 100%; border: 1px solid var(--border); border-radius: 14px; padding: 12px 14px; font: inherit; background: rgba(255,255,255,0.06); color: var(--text); }
+        input::placeholder, textarea::placeholder { color: #8fa0bc; }
+        textarea { min-height: 120px; resize: vertical; }
+        .status { min-height: 24px; color: var(--accent); font-weight: 700; }
+        footer { padding: 35px 0 50px; color: var(--muted); }
+        .footer-row { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+        .toolbar { display: flex; align-items: center; gap: 12px; }
+        .lang-switcher, .theme-toggle, .search-box {
+            display: flex; align-items: center; gap: 8px; border: 1px solid var(--border); background: rgba(255,255,255,0.04); border-radius: 999px; padding: 6px 12px; color: var(--text);
+        }
+        .lang-switcher button, .theme-toggle button {
+            border: none; background: transparent; color: var(--text); font-weight: 700; cursor: pointer; padding: 6px 8px; border-radius: 999px;
+        }
+        .lang-switcher button.active, .theme-toggle button.active { background: rgba(47,124,255,0.14); color: var(--primary-2); }
+        .search-box input {
+            border: none; background: transparent; color: var(--text); width: 160px; font: inherit; outline: none;
+        }
+        .search-box input::placeholder { color: var(--muted); }
+        .hero-panel { position: relative; }
+        .hero-panel::before { content: ''; position: absolute; inset: -18px; background: radial-gradient(circle at top left, rgba(47,124,255,0.35), transparent 45%); border-radius: 32px; z-index: 0; }
+        .hero-panel > * { position: relative; z-index: 1; }
+        .metrics { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; margin-top: 28px; }
+        .metric { background: rgba(255,255,255,0.04); border: 1px solid var(--border); border-radius: 18px; padding: 18px; }
+        .metric strong { font-size: clamp(1.4rem, 3vw, 2rem); display: block; color: var(--accent); }
+        .metric span { color: var(--muted); }
+        .section-shell { background: rgba(255,255,255,0.02); border: 1px solid var(--border); border-radius: 30px; padding: 24px; }
+        .service-grid, .portfolio-grid, .testimonial-slider, .about-grid { display: grid; gap: 18px; }
+        .service-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+        .service-card, .portfolio-card, .testimonial-card, .about-panel { background: var(--surface); border: 1px solid var(--border); border-radius: 22px; padding: 22px; box-shadow: var(--shadow); }
+        .service-card .icon { font-size: 2rem; }
+        .service-card ul { margin: 14px 0 0; padding-left: 18px; color: var(--muted); }
+        .portfolio-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+        .portfolio-card img { width: 100%; height: 220px; object-fit: cover; border-radius: 18px; display: block; margin-bottom: 14px; }
+        .filter-bar { display: flex; flex-wrap: wrap; gap: 12px; margin: 18px 0 24px; }
+        .filter-btn { border: 1px solid var(--border); background: rgba(255,255,255,0.03); color: var(--text); border-radius: 999px; padding: 10px 16px; cursor: pointer; font-weight: 700; }
+        .filter-btn.active { background: linear-gradient(90deg, var(--primary), var(--primary-2)); color: white; }
+        .testimonial-slider { position: relative; }
+        .testimonial-track { display: flex; transition: transform 0.35s ease; }
+        .testimonial-card { min-width: 100%; }
+        .testimonial-header { display: flex; align-items: center; gap: 14px; margin-bottom: 12px; }
+        .testimonial-header img { width: 60px; height: 60px; border-radius: 50%; object-fit: cover; }
+        .slider-controls { display: flex; gap: 12px; margin-top: 16px; }
+        .slider-controls button { border: 1px solid var(--border); background: rgba(255,255,255,0.05); color: var(--text); border-radius: 12px; width: 42px; height: 42px; cursor: pointer; }
+        .about-grid { grid-template-columns: 1.2fr 0.8fr; }
+        .about-list { list-style: none; padding: 0; margin: 18px 0 0; display: grid; gap: 12px; }
+        .about-list li { background: rgba(255,255,255,0.04); border: 1px solid var(--border); padding: 12px 16px; border-radius: 12px; color: var(--muted); }
+        .cta-box { background: linear-gradient(135deg, rgba(47,124,255,0.12), rgba(23,214,181,0.08)); border: 1px solid var(--border); border-radius: 26px; padding: 26px; display: flex; justify-content: space-between; align-items: center; gap: 20px; }
+        .loading-screen { position: fixed; inset: 0; background: rgba(7,17,31,0.94); display: grid; place-items: center; z-index: 200; transition: opacity 0.5s ease; }
+        .loading-screen.hidden { opacity: 0; visibility: hidden; }
+        .loader { width: 70px; height: 70px; border: 4px solid rgba(255,255,255,0.14); border-top-color: #2f7cff; border-radius: 50%; animation: spin 0.9s linear infinite; }
+        .back-to-top { position: fixed; right: 24px; bottom: 24px; width: 48px; height: 48px; border: none; border-radius: 50%; background: linear-gradient(135deg, var(--primary), var(--primary-2)); color: white; box-shadow: var(--shadow); display: none; cursor: pointer; z-index: 25; }
+        .back-to-top.visible { display: block; }
+        body.light-theme { --bg: #eef4ff; --surface: #ffffff; --text: #0d1730; --muted: #4d5f84; --primary: #2f7cff; --primary-2: #73a8ff; --accent: #0ea5a1; --border: rgba(13,23,48,0.08); --shadow: 0 18px 40px rgba(15, 23, 42, 0.1); background: linear-gradient(135deg, #edf4ff, #f8fbff); }
+        body.light-theme .topbar, body.light-theme .hero-card, body.light-theme .card, body.light-theme .service-card, body.light-theme .portfolio-card, body.light-theme .testimonial-card, body.light-theme .about-panel, body.light-theme .section-shell, body.light-theme .cta-box { background: rgba(255,255,255,0.96); }
+        body.light-theme .nav-links a { color: #33415c; }
+        body.light-theme .search-box, body.light-theme .lang-switcher, body.light-theme .theme-toggle { background: rgba(15, 23, 42, 0.03); }
+        @keyframes spin { to { transform: rotate(360deg); } }
+        @media (max-width: 980px) { .service-grid, .portfolio-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } .about-grid { grid-template-columns: 1fr; } .cta-box { flex-direction: column; align-items: flex-start; } }
+        @media (max-width: 860px) { .hero-grid, .contact-grid, .cards, .service-grid, .portfolio-grid { grid-template-columns: 1fr; } .nav-links { display: none; } .toolbar { width: 100%; justify-content: space-between; } .nav { flex-wrap: wrap; gap: 12px; } .metrics { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+        @media (max-width: 520px) { .metrics { grid-template-columns: 1fr; } .search-box { display: none; } .nav { padding: 12px 0; } .toolbar { width: auto; } }
+    </style>
+</head>
+<body>
+    <header class="topbar">
+        <div class="container nav">
+            <a class="brand" href="#home">SIT SWIM Services</a>
+            <nav class="nav-links">
+                <a href="#services">الخدمات</a>
+                <a href="#about">من نحن</a>
+                <a href="#portfolio">المشاريع</a>
+                <a href="#testimonials">التقييمات</a>
+                <a href="#contact">التواصل</a>
+            </nav>
+            <div class="toolbar">
+                <div class="search-box" aria-label="Search">
+                    <span>🔎</span>
+                    <input id="siteSearch" type="search" placeholder="Search..." aria-label="Search site" />
+                </div>
+                <div class="lang-switcher" aria-label="Language switcher">
+                    <button class="lang-btn active" data-lang="ar" type="button">AR</button>
+                    <button class="lang-btn" data-lang="fr" type="button">FR</button>
+                    <button class="lang-btn" data-lang="en" type="button">EN</button>
+                </div>
+                <div class="theme-toggle" aria-label="Theme switcher">
+                    <button id="themeToggle" type="button">🌙</button>
+                </div>
+            </div>
+            <a class="btn btn-primary" href="#contact">طلب عرض سعر</a>
+        </div>
+    </header>
+
+    <main id="home">
+        <section class="hero">
+            <div class="container hero-grid">
+                <div>
+                    <div class="eyebrow">شريكك الرقمي في الرباط أكدال</div>
+                    <h1>نساعدك على بناء حضور قوي واحترافي على الإنترنت</h1>
+                    <p class="lead">من تصميم المواقع إلى تحسين الظهور على Google، نقدم حلولًا رقمية عملية تساعدك على النمو، جذب العملاء، وبناء ثقة قوية لعلامتك التجارية.</p>
+                    <div class="hero-actions">
+                        <a class="btn btn-primary" href="#contact">ابدأ مشروعك الآن</a>
+                        <a class="btn btn-secondary" href="#services">استكشف خدماتنا</a>
+                    </div>
+                </div>
+                <div class="hero-card">
+                    <h3>لماذا تختار SIT SWIM ؟</h3>
+                    <ul>
+                        <li>تصميم احترافي ومهني</li>
+                        <li>تحسين سرعة الموقع وظهوره على Google</li>
+                        <li>نهج عملي يركز على النتائج</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="services">
+            <div class="container">
+                <h2 class="section-title">خدماتنا</h2>
+                <div class="section-shell">
+                    <div class="service-grid" id="servicesGrid"></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="about">
+            <div class="container">
+                <h2 class="section-title">من نحن</h2>
+                <div class="about-grid">
+                    <div class="about-panel">
+                        <p>نحن SIT SWIM Services، فريق يركز على تقديم حلول رقمية عملية ومهنية تساعد الأعمال على النمو بثقة. نؤمن أن كل مشروع يحتاج إلى موقع واضح، سريع، ومناسب لاحتياجاته، مع خطة رقمية تدعم النجاح على المدى الطويل.</p>
+                        <ul class="about-list">
+                            <li>تركيز على الجودة والاحتراف</li>
+                            <li>حلول تناسب احتياجات كل مشروع</li>
+                            <li>التواصل السهل والدعم المستمر</li>
+                        </ul>
+                    </div>
+                    <div class="about-panel">
+                        <h3>ماذا نحقق؟</h3>
+                        <p>نحول الاستراتيجيات إلى نتائج قابلة للقياس عبر تجربة مستخدم متقدمة، محتوى ذكي، وأداء عالي للمنصة.</p>
+                        <div class="metrics">
+                            <div class="metric"><strong>180+</strong><span>مشروعات</span></div>
+                            <div class="metric"><strong>96%</strong><span>رضا</span></div>
+                            <div class="metric"><strong>42</strong><span>حملات</span></div>
+                            <div class="metric"><strong>4.8x</strong><span>ROAS</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="portfolio">
+            <div class="container">
+                <h2 class="section-title">أحدث المشاريع</h2>
+                <div class="filter-bar" aria-label="Project filter">
+                    <button class="filter-btn active" data-filter="All" type="button">الكل</button>
+                    <button class="filter-btn" data-filter="Websites" type="button">المواقع</button>
+                    <button class="filter-btn" data-filter="E-commerce" type="button">التجارة الإلكترونية</button>
+                    <button class="filter-btn" data-filter="Marketing" type="button">التسويق</button>
+                </div>
+                <div class="portfolio-grid" id="portfolioGrid"></div>
+            </div>
+        </section>
+
+        <section class="section" id="testimonials">
+            <div class="container">
+                <h2 class="section-title">آراء عملائنا</h2>
+                <div class="testimonial-slider">
+                    <div class="testimonial-track" id="testimonialTrack"></div>
+                    <div class="slider-controls">
+                        <button type="button" id="prevTestimonial" aria-label="Previous testimonial">←</button>
+                        <button type="button" id="nextTestimonial" aria-label="Next testimonial">→</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <div class="cta-box">
+                    <div>
+                        <div class="eyebrow">جاهز للنمو؟</div>
+                        <h2>دعنا نبني حضورًا رقميًا يحقق لك النتائج.</h2>
+                    </div>
+                    <a class="btn btn-primary" href="#contact">ابدأ مشروعك الآن</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="contact">
+            <div class="container contact-grid">
+                <div class="card">
+                    <h2 class="section-title">تواصل معنا</h2>
+                    <p>إذا كنت تبحث عن شريك رقمي موثوق، فلنساعدك على تحويل فكرتك إلى مشروع احترافي جاهز للنمو.</p>
+                    <div class="info-list">
+                        <div class="info-item"><strong>الهاتف:</strong> 0696744427</div>
+                        <div class="info-item"><strong>واتساب:</strong> <a href="https://wa.me/212696744427">0696744427</a></div>
+                        <div class="info-item"><strong>العنوان:</strong> الرباط، أكدال، المغرب</div>
+                        <div class="info-item"><strong>البريد:</strong> wassiimjouali26@gmail.com</div>
+                    </div>
+                </div>
+                <div class="card">
+                    <form id="contactForm">
+                        <input type="text" name="name" placeholder="الاسم الكامل" required>
+                        <input type="email" name="email" placeholder="البريد الإلكتروني" required>
+                        <input type="tel" name="phone" placeholder="رقم الهاتف" required>
+                        <input type="text" name="service" placeholder="نوع الخدمة" required>
+                        <textarea name="message" placeholder="اكتب رسالتك هنا" required></textarea>
+                        <button type="submit" class="btn btn-primary">إرسال الرسالة</button>
+                        <div class="status" id="statusMessage"></div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container footer-row">
+            <span>© <span id="year"></span> SIT SWIM Services. All rights reserved.</span>
+            <span>Rabat Agdal · Morocco · +212 6 96 74 44 27</span>
+        </div>
+    </footer>
+
+    <script>
+        const form = document.getElementById('contactForm');
+        const statusMessage = document.getElementById('statusMessage');
+        const year = document.getElementById('year');
+        year.textContent = new Date().getFullYear();
+
+        form.addEventListener('submit', function (event) {
+            event.preventDefault();
+            statusMessage.textContent = 'تم استلام رسالتك وسنقوم بالرد في أقرب وقت.';
+            form.reset();
+        });
+
+        // Loading screen: this keeps the premium first impression while the site initializes.
+        window.addEventListener('load', function () {
+            const loader = document.querySelector('.loading-screen');
+            if (loader) {
+                setTimeout(function () {
+                    loader.classList.add('hidden');
+                }, 700);
+            }
+        });
+
+        // Back-to-top button: appears once the user scrolls down the page.
+        const backToTop = document.createElement('button');
+        backToTop.type = 'button';
+        backToTop.className = 'back-to-top';
+        backToTop.setAttribute('aria-label', 'Back to top');
+        backToTop.textContent = '↑';
+        document.body.appendChild(backToTop);
+
+        window.addEventListener('scroll', function () {
+            if (window.scrollY > 400) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+        });
+
+        backToTop.addEventListener('click', function () {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        const loadingScreen = document.createElement('div');
+        loadingScreen.className = 'loading-screen';
+        loadingScreen.innerHTML = '<div class="loader" aria-label="Loading"></div>';
+        document.body.insertBefore(loadingScreen, document.body.firstChild);
+
+        // Data-driven sections: loads projects, services and testimonials from the JSON file.
+        fetch('data.json')
+            .then(function (response) {
+                if (!response.ok) {
+                    throw new Error('Failed to load data file');
+                }
+                return response.json();
+            })
+            .then(function (data) {
+                renderServices(data.services);
+                renderPortfolio(data.projects);
+                renderTestimonials(data.testimonials);
+            })
+            .catch(function () {
+                document.getElementById('servicesGrid').innerHTML = '<article class="service-card"><h3>Web Development</h3><p>Professional digital services designed for growth.</p></article>';
+                document.getElementById('portfolioGrid').innerHTML = '<article class="portfolio-card"><h3>Featured project</h3><p>Portfolio data could not be loaded, but the website remains fully available.</p></article>';
+            });
+
+        function renderServices(services) {
+            const servicesGrid = document.getElementById('servicesGrid');
+            servicesGrid.innerHTML = services.map(function (service) {
+                return `
+                    <article class="service-card">
+                        <div class="icon">${service.icon}</div>
+                        <h3>${service.title}</h3>
+                        <p>${service.description}</p>
+                        <ul>
+                            ${service.highlights.map(function (item) { return '<li>' + item + '</li>'; }).join('')}
+                        </ul>
+                    </article>
+                `;
+            }).join('');
+        }
+
+        let activeProjectFilter = 'All';
+
+        function renderPortfolio(projects) {
+            const portfolioGrid = document.getElementById('portfolioGrid');
+            const filteredProjects = activeProjectFilter === 'All' ? projects : projects.filter(function (project) {
+                return project.category === activeProjectFilter;
+            });
+
+            portfolioGrid.innerHTML = filteredProjects.map(function (project) {
+                return `
+                    <article class="portfolio-card" data-category="${project.category}">
+                        <img src="${project.image}" alt="${project.name}" loading="lazy" />
+                        <span class="eyebrow">${project.type}</span>
+                        <h3>${project.name}</h3>
+                        <p>${project.description}</p>
+                        <div class="tag-list">
+                            ${project.tech.map(function (tech) { return '<span class="tag">' + tech + '</span>'; }).join('')}
+                        </div>
+                    </article>
+                `;
+            }).join('');
+        }
+
+        document.querySelectorAll('.filter-btn').forEach(function (button) {
+            button.addEventListener('click', function () {
+                document.querySelectorAll('.filter-btn').forEach(function (item) {
+                    item.classList.remove('active');
+                });
+                button.classList.add('active');
+                activeProjectFilter = button.getAttribute('data-filter');
+                fetch('data.json')
+                    .then(function (response) { return response.json(); })
+                    .then(function (data) {
+                        renderPortfolio(data.projects);
+                    });
+            });
+        });
+
+        let currentTestimonial = 0;
+
+        function renderTestimonials(testimonials) {
+            const track = document.getElementById('testimonialTrack');
+            track.innerHTML = testimonials.map(function (item) {
+                return `
+                    <article class="testimonial-card">
+                        <div class="testimonial-header">
+                            <img src="${item.avatar}" alt="${item.name}" loading="lazy" />
+                            <div>
+                                <strong>${item.name}</strong><br>
+                                <small>${item.role}</small>
+                            </div>
+                        </div>
+                        <p>“${item.quote}”</p>
+                    </article>
+                `;
+            }).join('');
+            updateTestimonialSlider();
+        }
+
+        function updateTestimonialSlider() {
+            const track = document.getElementById('testimonialTrack');
+            const cards = track.children;
+            if (!cards.length) return;
+            track.style.transform = `translateX(-${currentTestimonial * 100}%)`;
+        }
+
+        document.getElementById('prevTestimonial').addEventListener('click', function () {
+            const track = document.getElementById('testimonialTrack');
+            const total = track.children.length;
+            currentTestimonial = (currentTestimonial - 1 + total) % total;
+            updateTestimonialSlider();
+        });
+
+        document.getElementById('nextTestimonial').addEventListener('click', function () {
+            const track = document.getElementById('testimonialTrack');
+            const total = track.children.length;
+            currentTestimonial = (currentTestimonial + 1) % total;
+            updateTestimonialSlider();
+        });
+
+        setInterval(function () {
+            const track = document.getElementById('testimonialTrack');
+            if (!track || !track.children.length) return;
+            currentTestimonial = (currentTestimonial + 1) % track.children.length;
+            updateTestimonialSlider();
+        }, 5000);
+
+        const themeToggle = document.getElementById('themeToggle');
+        const savedTheme = localStorage.getItem('themeMode') || 'dark';
+        if (savedTheme === 'light') {
+            document.body.classList.add('light-theme');
+            themeToggle.textContent = '☀️';
+        }
+        themeToggle.addEventListener('click', function () {
+            document.body.classList.toggle('light-theme');
+            const isLight = document.body.classList.contains('light-theme');
+            localStorage.setItem('themeMode', isLight ? 'light' : 'dark');
+            themeToggle.textContent = isLight ? '☀️' : '🌙';
+        });
+
+        const searchInput = document.getElementById('siteSearch');
+        searchInput.addEventListener('input', function () {
+            const query = searchInput.value.trim().toLowerCase();
+            const cards = document.querySelectorAll('.portfolio-card, .service-card');
+            cards.forEach(function (card) {
+                const text = card.textContent.toLowerCase();
+                card.style.display = text.includes(query) ? '' : 'none';
+            });
+        });
+
+        const langButtons = document.querySelectorAll('.lang-btn');
+        const textMap = {
+            ar: {
+                navHome: 'الرئيسية',
+                navServices: 'الخدمات',
+                navAbout: 'من نحن',
+                navPortfolio: 'المشاريع',
+                navTestimonials: 'التقييمات',
+                navContact: 'التواصل',
+                cta: 'طلب عرض سعر',
+                search: 'بحث...'
+            },
+            fr: {
+                navHome: 'Accueil',
+                navServices: 'Services',
+                navAbout: 'À propos',
+                navPortfolio: 'Portfolio',
+                navTestimonials: 'Témoignages',
+                navContact: 'Contact',
+                cta: 'Obtenir un devis',
+                search: 'Rechercher...'
+            },
+            en: {
+                navHome: 'Home',
+                navServices: 'Services',
+                navAbout: 'About',
+                navPortfolio: 'Portfolio',
+                navTestimonials: 'Testimonials',
+                navContact: 'Contact',
+                cta: 'Get a quote',
+                search: 'Search...'
+            }
+        };
+
+        function setLanguage(lang) {
+            const links = document.querySelectorAll('.nav-links a');
+            const translations = textMap[lang];
+            if (!translations) return;
+            const labels = ['navHome', 'navServices', 'navAbout', 'navPortfolio', 'navTestimonials', 'navContact'];
+            if (links.length >= 5) {
+                links[0].textContent = translations.navHome;
+                links[1].textContent = translations.navServices;
+                links[2].textContent = translations.navPortfolio;
+                links[3].textContent = translations.navTestimonials;
+                links[4].textContent = translations.navContact;
+            }
+            document.documentElement.lang = lang;
+            document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+            document.querySelector('.search-box input').placeholder = translations.search;
+            document.querySelector('.btn.btn-primary').textContent = translations.cta;
+            langButtons.forEach(function (button) {
+                button.classList.toggle('active', button.dataset.lang === lang);
+            });
+        }
+
+        langButtons.forEach(function (button) {
+            button.addEventListener('click', function () {
+                setLanguage(button.dataset.lang);
+            });
+        });
+
+        setLanguage('ar');
+    </script>
+</body>
+</html>

@@ -1,0 +1,9 @@
+{
+  "name": "sit-swim-services",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Landing page for SIT SWIM Services",
+  "scripts": {
+    "start": "start chrome index.html"
+  }
+}

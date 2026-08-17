@@ -1,0 +1,246 @@
+/* ======================================
+   أنماط المتجاوب - Responsive Design
+   ====================================== */
+
+/* الأجهزة اللوحية */
+@media (max-width: 1024px) {
+    .hero-title {
+        font-size: 2.5rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.2rem;
+    }
+
+    .features-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .stats-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* الهواتف الذكية */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    h3 {
+        font-size: 1.2rem;
+    }
+
+    .hero {
+        min-height: 60vh;
+        padding: 20px 10px;
+    }
+
+    .hero-title {
+        font-size: 2rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .btn {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+
+    .features {
+        padding: 40px 15px;
+    }
+
+    .features-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .feature-card {
+        padding: 1.5rem;
+    }
+
+    .feature-icon {
+        font-size: 2.5rem;
+    }
+
+    .stats {
+        padding: 40px 15px;
+    }
+
+    .stats-container {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .stat-number {
+        font-size: 2.5rem;
+    }
+
+    .stat-label {
+        font-size: 1rem;
+    }
+
+    .section-title {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .footer {
+        padding: 30px 15px;
+    }
+
+    /* تعديل الصور المتجاوبة */
+    img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    /* تعديل الجداول */
+    table {
+        font-size: 0.9rem;
+        width: 100%;
+        overflow-x: auto;
+    }
+
+    /* تعديل النماذج */
+    input,
+    textarea,
+    select {
+        width: 100%;
+        padding: 10px;
+        font-size: 1rem;
+    }
+}
+
+/* الهواتف الصغيرة جداً */
+@media (max-width: 480px) {
+    :root {
+        font-size: 14px;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    h2 {
+        font-size: 1.3rem;
+    }
+
+    h3 {
+        font-size: 1.1rem;
+    }
+
+    .hero-title {
+        font-size: 1.8rem;
+    }
+
+    .hero-subtitle {
+        font-size: 0.9rem;
+    }
+
+    .nav-container {
+        padding: 0.8rem;
+    }
+
+    .logo h1 {
+        font-size: 1rem;
+    }
+
+    .hamburger span {
+        width: 20px;
+        height: 2px;
+    }
+
+    .btn {
+        width: 100%;
+        padding: 12px;
+    }
+
+    .feature-icon {
+        font-size: 2rem;
+    }
+
+    .footer-section h4 {
+        font-size: 1rem;
+    }
+
+    /* تحسين المسافات */
+    section {
+        padding: 30px 10px !important;
+    }
+
+    /* تحسين النصوص */
+    p {
+        font-size: 0.9rem;
+        line-height: 1.5;
+    }
+}
+
+/* الطباعة */
+@media print {
+    body {
+        background: white;
+        color: black;
+    }
+
+    .navbar,
+    .footer,
+    .btn {
+        display: none;
+    }
+
+    a {
+        color: black;
+        text-decoration: underline;
+    }
+
+    section {
+        page-break-inside: avoid;
+    }
+}
+
+/* الوضع الليلي (إذا تم تفعيله) */
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: var(--dark-bg);
+        color: white;
+    }
+
+    .feature-card {
+        background-color: #1e293b;
+    }
+
+    .navbar {
+        background-color: #0f172a;
+    }
+
+    .nav-link {
+        color: #cbd5e1;
+    }
+}
+
+/* تحسينات الأداء */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation: none !important;
+        transition: none !important;
+    }
+}

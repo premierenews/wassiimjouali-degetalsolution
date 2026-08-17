@@ -1,0 +1,312 @@
+{
+  "metadata": {
+    "projectName": "مشروع ويب الضخم",
+    "version": "1.0.0",
+    "language": "ar",
+    "direction": "rtl",
+    "author": "فريق المطورين",
+    "createdDate": "2026-06-23"
+  },
+  
+  "navigation": {
+    "mainMenu": [
+      {
+        "id": 1,
+        "label": "الرئيسية",
+        "url": "index.html",
+        "icon": "🏠",
+        "order": 1
+      },
+      {
+        "id": 2,
+        "label": "عن الموقع",
+        "url": "pages/about.html",
+        "icon": "ℹ️",
+        "order": 2
+      },
+      {
+        "id": 3,
+        "label": "الخدمات",
+        "url": "pages/services.html",
+        "icon": "🔧",
+        "order": 3
+      },
+      {
+        "id": 4,
+        "label": "المشاريع",
+        "url": "pages/portfolio.html",
+        "icon": "💼",
+        "order": 4
+      },
+      {
+        "id": 5,
+        "label": "التواصل",
+        "url": "pages/contact.html",
+        "icon": "📧",
+        "order": 5
+      }
+    ]
+  },
+
+  "features": [
+    {
+      "id": 1,
+      "title": "سرعة عالية",
+      "description": "تحميل سريع وأداء محسّن",
+      "icon": "⚡",
+      "category": "performance"
+    },
+    {
+      "id": 2,
+      "title": "تصميم جميل",
+      "description": "واجهة مستخدم حديثة وجذابة",
+      "icon": "🎨",
+      "category": "design"
+    },
+    {
+      "id": 3,
+      "title": "متوافق",
+      "description": "يعمل على جميع الأجهزة",
+      "icon": "📱",
+      "category": "compatibility"
+    },
+    {
+      "id": 4,
+      "title": "آمن",
+      "description": "حماية عالية للبيانات",
+      "icon": "🔒",
+      "category": "security"
+    }
+  ],
+
+  "statistics": {
+    "users": {
+      "label": "مستخدم سعيد",
+      "value": 1000,
+      "icon": "👥"
+    },
+    "projects": {
+      "label": "مشروع منجز",
+      "value": 500,
+      "icon": "📋"
+    },
+    "team": {
+      "label": "فريق محترف",
+      "value": 50,
+      "icon": "👨‍💼"
+    },
+    "satisfaction": {
+      "label": "نسبة رضا %",
+      "value": 99,
+      "icon": "😊"
+    }
+  },
+
+  "services": [
+    {
+      "id": 1,
+      "title": "تطوير المواقع",
+      "description": "بناء مواقع ويب حديثة وسريعة وآمنة",
+      "icon": "🌐",
+      "technologies": ["HTML5", "CSS3", "JavaScript", "React", "Vue.js"],
+      "price": 500,
+      "currency": "USD"
+    },
+    {
+      "id": 2,
+      "title": "تطوير التطبيقات",
+      "description": "تطبيقات جوّالة احترافية",
+      "icon": "📱",
+      "technologies": ["iOS", "Android", "Flutter", "React Native"],
+      "price": 1500,
+      "currency": "USD"
+    },
+    {
+      "id": 3,
+      "title": "التصميم الجرافيكي",
+      "description": "تصاميم جذابة واحترافية",
+      "icon": "🎨",
+      "technologies": ["Photoshop", "Illustrator", "Figma"],
+      "price": 300,
+      "currency": "USD"
+    },
+    {
+      "id": 4,
+      "title": "الأمان والدعم",
+      "description": "حماية كاملة ودعم فني",
+      "icon": "🔒",
+      "technologies": ["SSL", "Encryption", "Backup"],
+      "price": 200,
+      "currency": "USD"
+    }
+  ],
+
+  "packages": [
+    {
+      "id": 1,
+      "name": "الحزمة الأساسية",
+      "price": 500,
+      "currency": "USD",
+      "description": "للمشاريع الصغيرة",
+      "features": [
+        "موقع بسيط",
+        "5 صفحات",
+        "استضافة مجانية",
+        "دعم شهر واحد"
+      ],
+      "recommended": false
+    },
+    {
+      "id": 2,
+      "name": "الحزمة الاحترافية",
+      "price": 1500,
+      "currency": "USD",
+      "description": "للمشاريع المتوسطة",
+      "features": [
+        "موقع احترافي",
+        "15 صفحة",
+        "استضافة ممتازة",
+        "دعم 3 أشهر"
+      ],
+      "recommended": true
+    },
+    {
+      "id": 3,
+      "name": "الحزمة الكاملة",
+      "price": 3500,
+      "currency": "USD",
+      "description": "للمشاريع الضخمة",
+      "features": [
+        "موقع ضخم",
+        "صفحات غير محدودة",
+        "استضافة عالية الأداء",
+        "دعم سنة كاملة"
+      ],
+      "recommended": false
+    }
+  ],
+
+  "projects": [
+    {
+      "id": 1,
+      "title": "موقع شركة الإنشاءات",
+      "description": "موقع احترافي لشركة إنشاءات",
+      "icon": "🏢",
+      "technologies": ["HTML5", "CSS3", "JavaScript"],
+      "color": "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
+      "status": "completed",
+      "date": "2025-12-15"
+    },
+    {
+      "id": 2,
+      "title": "متجر مستحضرات التجميل",
+      "description": "متجر إلكتروني حديث",
+      "icon": "💄",
+      "technologies": ["React", "Node.js", "MongoDB"],
+      "color": "linear-gradient(135deg, #f093fb 0%, #f5576c 100%)",
+      "status": "completed",
+      "date": "2025-11-20"
+    },
+    {
+      "id": 3,
+      "title": "منصة التعليم الإلكترونية",
+      "description": "منصة متقدمة لتقديم الدورات",
+      "icon": "📚",
+      "technologies": ["Vue.js", "Python", "PostgreSQL"],
+      "color": "linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)",
+      "status": "completed",
+      "date": "2025-10-05"
+    },
+    {
+      "id": 4,
+      "title": "نظام إدارة المستشفيات",
+      "description": "نظام شامل لإدارة العمليات",
+      "icon": "🏥",
+      "technologies": ["Angular", "Java", "MySQL"],
+      "color": "linear-gradient(135deg, #43e97b 0%, #38f9d7 100%)",
+      "status": "completed",
+      "date": "2025-09-10"
+    },
+    {
+      "id": 5,
+      "title": "تطبيق توصيل الطعام",
+      "description": "تطبيق جوال متطور",
+      "icon": "🍕",
+      "technologies": ["React Native", "Firebase", "Google Maps"],
+      "color": "linear-gradient(135deg, #fa709a 0%, #fee140 100%)",
+      "status": "completed",
+      "date": "2025-08-22"
+    },
+    {
+      "id": 6,
+      "title": "منصة إدارة المشاريع",
+      "description": "أداة شاملة لإدارة المشاريع",
+      "icon": "⚙️",
+      "technologies": ["Next.js", "GraphQL", "Docker"],
+      "color": "linear-gradient(135deg, #a8edea 0%, #fed6e3 100%)",
+      "status": "in-progress",
+      "date": "2026-01-15"
+    }
+  ],
+
+  "team": [
+    {
+      "id": 1,
+      "name": "الرئيس التنفيذي",
+      "role": "CEO",
+      "experience": "15 سنة",
+      "speciality": "إدارة المشاريع",
+      "icon": "👨‍💼"
+    },
+    {
+      "id": 2,
+      "name": "مدير التطوير",
+      "role": "CTO",
+      "experience": "10 سنوات",
+      "speciality": "تطوير الويب والتطبيقات",
+      "icon": "👨‍💻"
+    },
+    {
+      "id": 3,
+      "name": "مدير التصميم",
+      "role": "Design Manager",
+      "experience": "8 سنوات",
+      "speciality": "تصميم واجهات المستخدم",
+      "icon": "👩‍🎨"
+    }
+  ],
+
+  "contactInfo": {
+    "email": "info@project.com",
+    "phone": "+966123456789",
+    "address": "الرياض، المملكة العربية السعودية",
+    "businessHours": "9:00 - 17:00",
+    "timezone": "Asia/Riyadh"
+  },
+
+  "socialMedia": {
+    "facebook": "https://facebook.com",
+    "twitter": "https://twitter.com",
+    "instagram": "https://instagram.com",
+    "linkedin": "https://linkedin.com"
+  },
+
+  "colors": {
+    "primary": "#6366f1",
+    "secondary": "#ec4899",
+    "darkBg": "#0f172a",
+    "lightBg": "#f8fafc",
+    "textDark": "#1e293b",
+    "textLight": "#64748b",
+    "border": "#e2e8f0"
+  },
+
+  "settings": {
+    "language": "ar",
+    "direction": "rtl",
+    "theme": "light",
+    "animationsEnabled": true,
+    "notificationsEnabled": true,
+    "debugMode": true
+  }
+}
