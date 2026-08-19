@@ -25,6 +25,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initCTA();
     initCounter();
     initScrollEffects();
+    initContactForm();
 });
 
 /* ======================================
@@ -160,6 +161,40 @@ function initScrollEffects() {
     }, options);
 
     elements.forEach(el => observer.observe(el));
+}
+
+/* ======================================
+   إرسال نموذج الاتصال عبر WhatsApp
+   ====================================== */
+
+function initContactForm() {
+    const contactForm = document.getElementById('contactForm');
+
+    if (!contactForm) return;
+
+    contactForm.addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        const formData = new FormData(contactForm);
+        const name = formData.get('name').trim();
+        const email = formData.get('email').trim();
+        const phone = formData.get('phone').trim();
+        const subject = formData.get('subject').trim();
+        const message = formData.get('message').trim();
+
+        const whatsappMessage = [
+            'السلام عليكم، توصلت بطلب جديد من الموقع:',
+            '',
+            `الاسم: ${name}`,
+            `الإيميل: ${email}`,
+            `الهاتف: ${phone}`,
+            `الموضوع: ${subject}`,
+            `الرسالة: ${message}`
+        ].join('\n');
+
+        const whatsappUrl = `https://wa.me/212696744427?text=${encodeURIComponent(whatsappMessage)}`;
+        window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
+    });
 }
 
 /* ======================================
