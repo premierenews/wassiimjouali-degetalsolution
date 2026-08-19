@@ -284,3 +284,31 @@ updateFooterYear();
 window.APP = APP;
 window.openWhatsApp = openWhatsApp;
 window.showNotification = showNotification;
+document.addEventListener('DOMContentLoaded', function() {
+    const contactForm = document.getElementById('contactForm');
+    
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value;
+
+            const text = `السلام عليكم، عندي طلب جديد من الموقع:\n\n` +
+                         `👤 *الاسم:* ${name}\n` +
+                         `📧 *الإيميل:* ${email}\n` +
+                         `📱 *الهاتف:* ${phone}\n` +
+                         `📌 *الموضوع:* ${subject}\n` +
+                         `💬 *الرسالة:* ${message}`;
+
+            const encodedText = encodeURIComponent(text);
+            const whatsappNumber = "212696744427"; 
+            const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodedText}`;
+            
+            window.open(whatsappURL, '_blank');
+        });
+    }
+});
