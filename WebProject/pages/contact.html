@@ -252,29 +252,5 @@
     <script src="../js/animations.js"></script>
 
 </body>
-<script>
-document.getElementById('contactForm').addEventListener('submit', function(e) {
-    e.preventDefault();
-
-    const name = document.getElementById('name').value;
-    const email = document.getElementById('email').value;
-    const phone = document.getElementById('phone').value;
-    const subject = document.getElementById('subject').value;
-    const message = document.getElementById('message').value;
-
-    const text = `السلام عليكم، عندي طلب جديد من الموقع:\n\n` +
-                 `👤 *الاسم:* ${name}\n` +
-                 `📧 *الإيميل:* ${email}\n` +
-                 `📱 *الهاتف:* ${phone}\n` +
-                 `📌 *الموضوع:* ${subject}\n` +
-                 `💬 *الرسالة:* ${message}`;
-
-    const encodedText = encodeURIComponent(text);
-    const whatsappNumber = "212696744427"; 
-    const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodedText}`;
-    
-    window.open(whatsappURL, '_blank');
-});
-</script>
 
 </html>

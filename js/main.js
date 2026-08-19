@@ -5,7 +5,7 @@
 // Configuration
 const APP = {
     debug: true,
-    whatsappNumber: '0696744427',
+    whatsappNumber: '212696744427',
     whatsappMessage: 'Bonjour, je suis intéressé par vos services. Pouvez-vous m\'en dire plus ?'
 };
 
@@ -24,6 +24,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initSmoothScroll();
     initWhatsAppLinks();
     initMobileMenu();
+    initContactForm();
 });
 
 /* ==============================================
@@ -172,55 +173,43 @@ function initContactForm() {
                 name: formData.get('name'),
                 email: formData.get('email'),
                 phone: formData.get('phone'),
-                service: formData.get('service'),
+                subject: formData.get('subject'),
                 message: formData.get('message')
             };
             
-            // Validate form
-            if (validateForm(data)) {
-                // Show success message
-                showNotification('Merci! Votre message a été envoyé avec succès.', 'success');
-                
-                // Reset form
-                contactForm.reset();
-                
-                // Save to localStorage
-                saveFormData(data);
-                
-                log('Contact form submitted', 'success');
-            }
+            if (!validateForm(data)) return;
+
+            const whatsappMessage = [
+                'السلام عليكم، عندي طلب جديد من الموقع:',
+                '',
+                `الاسم: ${data.name}`,
+                `الإيميل: ${data.email}`,
+                `الهاتف: ${data.phone || 'غير مذكور'}`,
+                `الموضوع: ${data.subject}`,
+                `الرسالة: ${data.message}`
+            ].join('\n');
+
+            const whatsappUrl = `https://wa.me/${APP.whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
+            window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
+            log('Contact form opened WhatsApp', 'success');
         });
     }
 }
 
 function validateForm(data) {
-    if (!data.name || !data.email || !data.phone || !data.message) {
-        showNotification('Veuillez remplir tous les champs requis.', 'error');
+    if (!data.name || !data.email || !data.subject || !data.message) {
+        showNotification('يرجى ملء جميع الخانات المطلوبة.', 'error');
         return false;
     }
     
     // Email validation
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(data.email)) {
-        showNotification('Veuillez entrer une adresse email valide.', 'error');
+        showNotification('يرجى إدخال بريد إلكتروني صحيح.', 'error');
         return false;
     }
     
     return true;
-}
-
-function saveFormData(data) {
-    try {
-        const submissions = JSON.parse(localStorage.getItem('contactSubmissions')) || [];
-        submissions.push({
-            ...data,
-            date: new Date().toISOString()
-        });
-        localStorage.setItem('contactSubmissions', JSON.stringify(submissions));
-        log('Form data saved to localStorage', 'success');
-    } catch (error) {
-        log('Error saving form data: ' + error.message, 'error');
-    }
 }
 
 /* ==============================================
@@ -284,31 +273,3 @@ updateFooterYear();
 window.APP = APP;
 window.openWhatsApp = openWhatsApp;
 window.showNotification = showNotification;
-document.addEventListener('DOMContentLoaded', function() {
-    const contactForm = document.getElementById('contactForm');
-    
-    if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const phone = document.getElementById('phone').value;
-            const subject = document.getElementById('subject').value;
-            const message = document.getElementById('message').value;
-
-            const text = `السلام عليكم، عندي طلب جديد من الموقع:\n\n` +
-                         `👤 *الاسم:* ${name}\n` +
-                         `📧 *الإيميل:* ${email}\n` +
-                         `📱 *الهاتف:* ${phone}\n` +
-                         `📌 *الموضوع:* ${subject}\n` +
-                         `💬 *الرسالة:* ${message}`;
-
-            const encodedText = encodeURIComponent(text);
-            const whatsappNumber = "212696744427"; 
-            const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodedText}`;
-            
-            window.open(whatsappURL, '_blank');
-        });
-    }
-});
