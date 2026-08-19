@@ -244,3 +244,17 @@
         transition: none !important;
     }
 }
+@media (max-width: 768px) {
+  body, html {
+    overflow-x: hidden;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  .container, section {
+    width: 100% !important;
+    box-sizing: border-box;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
