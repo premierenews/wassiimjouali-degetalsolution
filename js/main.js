@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initScrollEffect();
     initSmoothScroll();
     initWhatsAppLinks();
-    initContactForm();
+    //
     initMobileMenu();
 });
 
