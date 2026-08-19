@@ -287,8 +287,20 @@
 
         form.addEventListener('submit', function (event) {
             event.preventDefault();
-            statusMessage.textContent = 'تم استلام رسالتك وسنقوم بالرد في أقرب وقت.';
-            form.reset();
+
+            const formData = new FormData(form);
+            const whatsappMessage = [
+                'السلام عليكم، توصلت بطلب جديد من الموقع:',
+                '',
+                `الاسم: ${formData.get('name').trim()}`,
+                `الإيميل: ${formData.get('email').trim()}`,
+                `الهاتف: ${formData.get('phone').trim()}`,
+                `الموضوع: ${formData.get('service').trim()}`,
+                `الرسالة: ${formData.get('message').trim()}`
+            ].join('\n');
+
+            const whatsappUrl = `https://wa.me/212696744427?text=${encodeURIComponent(whatsappMessage)}`;
+            window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
         });
 
         // Loading screen: this keeps the premium first impression while the site initializes.
