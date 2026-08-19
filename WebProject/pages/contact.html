@@ -252,29 +252,30 @@
     <script src="../js/animations.js"></script>
 
     <script>
-        // التعامل مع نموذج التواصل
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
-            e.preventDefault();
+document.getElementById('contactForm').addEventListener('submit', function(e) {
+    e.preventDefault();
 
-            // التحقق من النموذج
-            if (UI.validateForm('#contactForm')) {
-                // الحصول على بيانات النموذج
-                const formData = UI.getFormData('#contactForm');
-                
-                // إظهار رسالة نجاح
-                showNotification('تم إرسال رسالتك بنجاح! سنتواصل معك قريباً.', 'success');
-                
-                // حفظ البيانات
-                saveData('lastContact', formData);
-                
-                // مسح النموذج
-                this.reset();
-                
-                log('تم إرسال نموذج التواصل');
-            } else {
-                showNotification('يرجى ملء جميع الحقول المطلوبة', 'error');
-            }
-        });
-    </script>
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const phone = document.getElementById('phone').value;
+    const subject = document.getElementById('subject').value;
+    const message = document.getElementById('message').value;
+
+    const text = `السلام عليكم، عندي طلب جديد من الموقع:\n\n` +
+                 `👤 *الاسم:* ${name}\n` +
+                 `📧 *الإيميل:* ${email}\n` +
+                 `📱 *الهاتف:* ${phone}\n` +
+                 `📌 *الموضوع:* ${subject}\n` +
+                 `💬 *الرسالة:* ${message}`;
+
+    const encodedText = encodeURIComponent(text);
+    const whatsappNumber = "212696744427"; 
+    const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodedText}`;
+    
+    window.open(whatsappURL, '_blank');
+});
+</script>
+
+
 </body>
 </html>
